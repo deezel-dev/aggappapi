@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html data-ng-app="app" lang="en" style="width: 100%;height: 100%;margin: 0px;padding: 0px;overflow-x: hidden;">
    <head>
-      <?php require "http://aggappapi.azurewebsites.net/include/layout/main.head.php" ?>
+      <?php //require "http://aggappapi.azurewebsites.net/include/layout/main.head.php" ?>
    </head>
     <body data-ng-controller="indexCtrl">        
        
