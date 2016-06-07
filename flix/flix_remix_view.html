@@ -1,0 +1,93 @@
+<div style="padding: 8px;margin-top: 1px;">
+    <!-- Remix Header  -->
+    <div style="margin: 2px;">&nbsp;</div>
+
+    <div class="row">
+      <div class="col-xs-4" style="padding-top: 8px;">
+        <div align="center" style="padding: 10px;">
+            <img ng-show="movie.product_image != null && movie.product_image.length > 0" style="width: 95%; -webkit-box-shadow: 0px 0px 12px 0px rgba(100, 100, 100, 0.45); -moz-box-shadow: 0px 0px 12px 0px rgba(100, 100, 100, 0.45); box-shadow: 0px 0px 12px 0px rgba(100, 100, 100, 0.45);" src="{{movie.product_image}}" />
+            <div ng-show="movie.product_image == null || movie.product_image.length == 0" style="width: 95%; -webkit-box-shadow: 0px 0px 12px 0px rgba(100, 100, 100, 0.45); -moz-box-shadow: 0px 0px 12px 0px rgba(100, 100, 100, 0.45); box-shadow: 0px 0px 12px 0px rgba(100, 100, 100, 0.45);">
+                <img src="/public/images/FlixAcademyCoverArt.png" style="width: 95%;" />
+            </div>
+        </div>
+      </div>
+      <div class="col-xs-8">
+        <div align="left" style=";color: #AA4444; font-weight: bold;">
+            <b><h2>{{movie.title}}</h2></b>
+        </div>
+
+        <div align="bottom">
+            {{remix.lesson_name}}
+            <br>
+            {{view.name}} 
+
+            <div ng-show="{{view.id}}==2">
+                FlixQuiz Score: {{correct_answers}}/{{total_answers}}
+                <!--<br>
+                <button>SUBMIT QUIZ</button>-->
+            </div>
+
+        </div>
+
+      </div>
+   </div>
+
+    <HR COLOR="black" SIZE="2">
+
+    <div data-ng-show="0" id="grad1">
+       <div class="row">
+          <div vertical-align="bottom" class="col-sm-5" style="padding: 5px;padding-bottom: 0px;margin-bottom: 0px;">
+             <B><FONT SIZE=+1 COLOR=WHITE FACE='Rockwell,Courier,Verdana'>                            
+             {{movie.title}}
+             <br>
+             <!--{{movie.length}}&nbsp;minutes
+             <br>-->
+             {{remix.lesson_name}} 
+             <br>
+             {{view.name}}                          
+             </FONT></B>
+          </div>
+
+          <div class="col-sm-5">
+             <h2 style="margin-top: 0px;margin-bottom: -1px;padding-right: 30px;" vertical-align="top" align="right"><B><FONT SIZE=+2 COLOR=red FACE='Rockwell,Courier,Verdana'>FlixREMIX by</FONT></B></h2>
+             <img align="right" style="margin-top: 0px;padding-bottom: 8px;height: 90%;" src="/public/images/flix-logo.png" alt="FlixAcademy" />
+          </div>
+       </div>
+    </div>
+    <!-- Remix Details  -->
+    <input data-ng-show="0" ng-model="view.id"/>
+    <div data-ng-repeat="remixEntry in remixEntries | orderBy:'time' | filter:{commentary_type: view.id}" value="{{remixEntry.seq_id}}">
+       
+       <div class="col-xs-4" align="left">
+          <br>{{remixEntry.time}} <br> <br> {{remixEntry.commentary}}
+       </div>
+
+       <!-- COMMENTARY -->
+       <div ng-show="{{remixEntry.commentary_type}}==1" class="row" style="padding: 2px;">
+          <div class="col-xs-2" align="center">
+             <br> <a href="{{remixEntry.link}}" target="blank">link</a>
+          </div>
+          <div class="col-lg-4 col-md-3 col-sm-3 col-xs-3" align="center">
+             <br> 
+             <a href="{{remixEntry.image}}" target="_blank"> 
+             <img align="center" width="90%" height="90%" data-ng-src="{{remixEntry.image}}"/> 
+             </a>
+          </div>
+       </div>
+
+       <!-- QUIZ -->
+       <div ng-show="{{remixEntry.commentary_type}}==2" class="row" style="padding: 2px;">
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" align="center">
+             <br> <a data-ng-click="check_answer(remixEntry.commentary, remixEntry.option_1, remixEntry.correct_answer)" style="cursor: pointer;">{{remixEntry.option_1}}</a> 
+             <br><br> 
+             <a data-ng-click="check_answer(remixEntry.commentary, remixEntry.option_2, remixEntry.correct_answer)" style="cursor: pointer;">{{remixEntry.option_2}}</a>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" align="center">
+             <br> <a data-ng-click="check_answer(remixEntry.commentary, remixEntry.option_3, remixEntry.correct_answer)" style="cursor: pointer;">{{remixEntry.option_3}}</a> 
+             <br><br> 
+             <a data-ng-click="check_answer(remixEntry.commentary, remixEntry.option_4, remixEntry.correct_answer)" style="cursor: pointer;">{{remixEntry.option_4}}</a>
+          </div>
+       </div>
+       <HR COLOR="red" SIZE="2">
+    </div>
+</div>

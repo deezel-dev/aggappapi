@@ -1,0 +1,181 @@
+
+            <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 10 Transitional//EN"
+        "http://wwww3org/TR/xhtml1/DTD/xhtml1-transitionaldtd">
+          <html>
+            <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>Flix Admin Console</title>
+            </head>
+            <body>
+            <div class="mainContainer" data-ng-app="app" >
+              <div data-ng-controller="newMovieMaintenanceCtrl"> <!-- style="overflow:scroll; height:1000px;" -->
+
+                <div style="display: inline; padding-bottom: 5px">
+
+                <font color="white" size="+3;"><b>FLIX ACADEMY MOVIES</b></font>
+&nbsp;&nbsp;&nbsp;&nbsp;
+                <select  name="selected" ng-model="selectedFilter" ng-change="filterChanged()"> 
+                    <option value="1" >ALL MOVIES</option>
+                    <option value="2">MISSING LINKS</option>
+                    <option value="3">MISSING SUBJECTS</option>
+                    <option value="4">MISSING ART</option>
+                    <option value="5">MISSING DESCRIPTION</option>
+                </select>
+&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" data-ng-model="search">
+&nbsp;&nbsp;&nbsp;&nbsp;
+                   <button ng-click="getData(search)">SEARCH</button>
+
+                </div> 
+                  
+                <HR COLOR="white" SIZE="5" style="margin-top: 0px">
+
+
+                <div style="display: inline; padding-bottom: 5px; vertical-align:top;">
+                    
+                    <input type="checkbox" ng-model="coverArtChecked" ng-show="0">
+                    <img ng-show="coverArtChecked" style='width:150px;height:200px;' data-ng-src="{{coverArt}}">
+
+                    <div style="display: inline;padding: 10px;">
+                        <font color="white" size="+2"><b>{{movieTitle}}</b></font>
+                    </div>
+
+                </div>
+
+                 {{data}}
+
+                  <div> 
+                    <input type="checkbox" ng-model="imageChecked" ng-show="0">
+                    <input type="checkbox" ng-model="titleChecked" ng-show="0">
+                    <input type="checkbox" ng-model="yearChecked" ng-show="0">
+                    <input type="checkbox" ng-model="ratedChecked" ng-show="0">
+                    <input type="checkbox" ng-model="releasedChecked" ng-show="0">
+                    <input type="checkbox" ng-model="runtimeChecked" ng-show="0">
+                    <input type="checkbox" ng-model="genreChecked" ng-show="0">
+                    <input type="checkbox" ng-model="directorChecked" ng-show="0">
+                    <input type="checkbox" ng-model="writerChecked" ng-show="0">
+                    <input type="checkbox" ng-model="actorsChecked" ng-show="0">
+                    <input type="checkbox" ng-model="plotChecked" ng-show="0">
+                    <input type="checkbox" ng-model="languageChecked" ng-show="0">
+                    <input type="checkbox" ng-model="countryChecked" ng-show="0">
+                    <input type="checkbox" ng-model="awardsChecked" ng-show="0">
+                    <input type="checkbox" ng-model="posterChecked" ng-show="0">
+                    <input type="checkbox" ng-model="metascoreChecked" ng-show="0">
+                    <input type="checkbox" ng-model="imdbratingChecked" ng-show="0">
+                    <input type="checkbox" ng-model="imdbvotesChecked" ng-show="0">
+                    <input type="checkbox" ng-model="imdbidChecked" ng-show="0">
+                    <input type="checkbox" ng-model="typeChecked" ng-show="0">
+                    <input type="checkbox" ng-model="suggestedByChecked" ng-show="0">
+                      
+                      <b><u><a href="" ng-model="imageChecked" ng-click="imageChecked=!imageChecked">Image:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-hide="imageChecked">{{coverArt}}</p><input type="text" ng-model="coverArt" ng-show="imageChecked"/>
+
+                    <b><u><a href="" ng-model="yearChecked" ng-click="yearChecked=!yearChecked">Year:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-hide="yearChecked">{{movieYear}}</p><input type="text" ng-model="movieYear" ng-show="yearChecked"/>
+
+                    &nbsp;&nbsp;<b><u><a href="" ng-model="ratedChecked" ng-click="ratedChecked=!ratedChecked">Rated:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-hide="ratedChecked">{{movieRated}}</p><input type="text" ng-model="movieRated" ng-show="ratedChecked"/>
+                    
+                    &nbsp;&nbsp;<b><u><a href="" ng-model="runtimeChecked" ng-click="runtimeChecked=!runtimeChecked">Runtime:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-hide="runtimeChecked">{{movieRuntime}}</p><input type="text" ng-model="movieRuntime" ng-show="runtimeChecked"/>
+                      
+                      
+                   <br /><b><u><a href="" ng-model="releasedChecked" ng-click="releasedChecked=!releasedChecked">Released:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-hide="releasedChecked">{{movieReleased}}</p><input type="text" ng-model="movieReleased" ng-show="releasedChecked"/>
+
+                     &nbsp;&nbsp;<b><u><a href="" ng-model="genreChecked" ng-click="genreChecked=!genreChecked">Genre:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-hide="genreChecked">{{movieGenre}}</p><input type="text" ng-model="movieGenre" ng-show="genreChecked"/>
+                    <br /><b><u><a href="" ng-model="directorChecked" ng-click="directorChecked=!directorChecked">Director:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-hide="directorChecked">{{movieDirector}}</p><input type="text" ng-model="movieDirector" ng-show="directorChecked"/>
+                    
+                      <br /><b><u><a href="" ng-model="writerChecked" ng-click="writerChecked=!writerChecked">Writer:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-hide="writerChecked">{{movieWriter}}</p><input type="text" ng-model="movieWriter" ng-show="writerChecked"/>
+                    
+                      <br /><b><u><a href="" ng-model="actorsChecked" ng-click="actorsChecked=!actorsChecked">Actors:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-hide="actorsChecked">{{movieActors}}</p><input type="text" ng-model="movieActors" ng-show="actorsChecked"/>
+                    
+                      <br /><b><u><a href="" ng-model="languageChecked" ng-click="languageChecked=!languageChecked">Language:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-hide="languageChecked">{{movieLanguage}}</p><input type="text" ng-model="movieLanguage" ng-show="languageChecked"/>
+                      
+                    &nbsp;&nbsp;<b><u><a href="" ng-model="countryChecked" ng-click="countryChecked=!countryChecked">Country:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-hide="countryChecked">{{movieCountry}}</p><input type="text" ng-model="movieCountry" ng-show="countryChecked"/>
+      
+                    <br /><b><u><a href="" ng-model="plotChecked" ng-click="plotChecked=!plotChecked">Plot:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-hide="plotChecked">{{moviePlot}}</p><input type="text" ng-model="moviePlot" ng-show="plotChecked"/>
+
+                    <br /><b><u><a href="" ng-model="awardsChecked" ng-click="awardsChecked=!awardsChecked">Awards:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-hide="awardsChecked">{{movieAwards}}</p><input type="text" ng-model="movieAwards" ng-show="awardsChecked"/>
+                    <!-- <br /><b><u><a href="" ng-model="posterChecked" ng-click="posterChecked=!posterChecked">Poster:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-hide="posterChecked">{{moviePoster}}</p><input type="text" ng-model="moviePoster" ng-show="posterChecked"/> -->
+                    <!--<br /><b><u>Metascore:</b></u>&nbsp;&nbsp;{{movieMetascore}}
+                    <br /><b><u>IMDB Rating:</b></u>&nbsp;&nbsp;{{movieimdbRating}}
+                    <br /><b><u>IMDB Votes:</b></u>&nbsp;&nbsp;{{movieImdbvotes}}-->
+                    
+                      <br /><b><u><a href="" ng-model="imdbidChecked" ng-click="imdbidChecked=!imdbidChecked">IMDB ID:</a></b></u>&nbsp;&nbsp;<a ng-href="{{makeIMDBUrl(movieimdbID)}}" target="_blank" ng-hide="imdbidChecked">{{movieimdbID}}</a><input type="text" ng-model="movieimdbID" ng-show="imdbidChecked"/>
+                      
+                      
+                      <!-- ng-click="load_iFrame(movieimdbID)" -->
+                    
+                      &nbsp;&nbsp;<b><u><a href="" ng-model="typeChecked" ng-click="typeChecked=!typeChecked">Type:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-hide="typeChecked">{{movieType}}</p><input type="text" ng-model="movieType" ng-show="typeChecked"/>
+                    
+                    <br /><b><u>FlixID:</b></u>&nbsp;&nbsp;{{movieflix_id}}
+                    &nbsp;&nbsp;<b><u>SuggestionID:</b></u>&nbsp;&nbsp;<p style="display: inline-block;">{{movieSuggestionID}}</p> 
+                    
+                      &nbsp;&nbsp;<b><u><a href="" ng-model="suggestedByChecked" ng-click="suggestedByChecked=!suggestedByChecked">Suggested By:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-hide="suggestedByChecked">{{movieSuggestedBy}}</p><input type="text" ng-model="movieSuggestedBy" ng-show="suggestedByChecked"/>
+
+                    <br />
+                      <!--
+                    <p align='center'><b><u>TOMATO RESULTS</u></b></p>
+
+                    <b><u>Tomato Meter:</b></u>&nbsp;&nbsp;{{movietomatoMeter}}
+                    <b><u>Tomato Image:</b></u>&nbsp;&nbsp;{{movietomatoImage}}
+                    <b><u>Tomato Reviews:</b></u>&nbsp;&nbsp;{{movietomatoReviews}}
+                    <br /><b><u>Tomato Fresh:</b></u>&nbsp;&nbsp;{{movietomatoFresh}}
+                    &nbsp;&nbsp;<b><u>Tomato Rotten:</b></u>&nbsp;&nbsp;{{movietomatoRotten}}
+                    <b><u>Tomato Meter:</b></u>&nbsp;&nbsp;{{movietomatoUserMeter}}
+                    <!--&nbsp;&nbsp;<b><u>Tomato UserRating:</b></u>&nbsp;&nbsp;{{movietomatoUserRating}}
+                    <br /><br /><b><u>Tomato Consensus:</b></u>&nbsp;&nbsp;{{movietomatoConsensus}}
+
+<br /><br /><br />-->
+           <div name="subjects">          
+          <div style="display:inline;float:left;">              
+              <b><u>Subjects:</u></b><br>
+          </div>   
+                                            
+            <div style="display:inline;padding:10px;">
+                <select name="selected" ng-model="selectedSubjectID" ng-change="subjectSelected()" ng-init="''"> 
+                    <option ng-repeat="flixSubject in flixSubjects" value="{{flixSubject.subject_id}}">{{flixSubject.subject_name}}</option>
+                </select>
+            </div>
+               
+           <div style="clear: both;"></div>
+ 
+               <br>
+          
+               <!-- ng-show="showSubjectMaintenance()" -->
+          <div  ng-repeat="subject in subjects" style="display: inline;padding:10px">              
+              <!--<button ng-click="removeSubject(subject.subject_id)">x {{subject.subject_name}}</button>-->
+              <button class="label label-primary" ng-click="removeSubject(subject.subject_id)">x {{subject.subject_name}}</button>
+          </div> 
+               
+        </div> 
+                      
+            <br>
+            <br>
+          <b><u>Vendors:</u></b><br>
+                      
+                      <!-- ng-show="showVendorMaintenance()"  -->
+          <div ng-repeat="vendor in vendors" style="display: inline;">
+               <a href="{{vendor.vendor_product_link}}" target="_blank" >
+                   <img style="width:100px;height:50px;padding:10px;" data-ng-src="{{vendor.vendor_logo}}"/>
+                </a>
+          </div> 
+                    
+                       <br>                   
+                      
+
+                <div id="buttonBar" align="center">
+                <button ng-click="btnSaveUpdate()">SAVE/UPDATE</button>
+                <button ng-click="btnDeleteMovie()">DELETE</button> 
+              </div>
+
+        </div>
+                  
+                  
+                
+               
+                  
+                  
+            </div>
+                
+            </div>
+                
+             
+            </body>
+            </html>

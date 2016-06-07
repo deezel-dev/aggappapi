@@ -1,0 +1,29 @@
+<div style="padding: 8px;margin-top: 1px;">
+    <!-- Remix Details  -->
+    <div data-ng-repeat="remixEntry in remixEntries | orderBy:'time' | filter:{commentary_type: view.id}" value="{{remixEntry.seq_id}}">
+       
+       <div class="col-xs-4" align="left">
+          <br>{{remixEntry.time}} <br> <br> {{remixEntry.commentary}}
+       </div>
+
+       <!-- COMMENTARY -->
+       <div ng-show="{{remixEntry.commentary_type}}==1" class="row" style="padding: 2px;">
+           <b>
+           <div class="col-xs-2">NOTE</div>
+           <div class="col-xs-2">TIME</div>
+           <div class="col-xs-2">NOTES</div>
+           </b>
+       </div>
+       <div ng-show="{{remixEntry.commentary_type}}==1" class="row" style="padding: 2px;">
+          <div class="col-xs-2" align="center">
+             <br> <a href="{{remixEntry.link}}" target="blank">link</a>
+          </div>
+          <div class="col-lg-4 col-md-3 col-sm-3 col-xs-3" align="center">
+             <br> 
+             <a href="{{remixEntry.image}}" target="_blank"> 
+             <img align="center" width="90%" height="90%" data-ng-src="{{remixEntry.image}}"/> 
+             </a>
+          </div>
+       </div>
+    </div>
+</div>

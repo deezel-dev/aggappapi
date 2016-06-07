@@ -1,0 +1,176 @@
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="app">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Flix Admin Console</title>
+  </head>
+<body>
+  <!-- main container -->
+    <div id="container">
+         <div data-ng-controller="flixSuggestionCtrl">
+            <div class="container-fluid">
+                <div class="row row-table" style="background-color: #EEEEEE; padding-top: 20px; padding-bottom: 20px;">
+                    <div class="col-sm-3">
+                        <label>Filter</label><br />                                         
+                        <select class="form-control" name="selected" ng-model="suggestionType"> 
+                            <option value="1">UN-APPROVED SUGGESTIONS</option>
+                            <option value="2">DUPLICATE SUGGESTIONS</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label>Search</label><br />
+                        <input class="form-control" type="text" ng-model="flixSearch">
+                    </div>
+                    <div class="col-sm-2 td-bottom">
+                        <div class="col-xs-12 visible-xs-block" style="margin-top: 10px;"></div>
+                        <button type="button"
+                                class="btn btn-danger btn-block"
+                                ng-click="searchMovies()"
+                                id="btnFindFlix">
+                            Find Flix
+                        </button>
+                    </div>
+
+                    <div class="col-sm-2 td-bottom">
+                        <div class="col-xs-12 visible-xs-block" style="margin-top: 10px;"></div>
+                        <button type="button"
+                                class="btn btn-danger btn-block"
+                                ng-click="deleteSelected()"
+                                id="btnFindFlix">
+                            Delete
+                        </button>
+                    </div>
+
+                    <div class="col-sm-2 td-bottom">
+                        <div class="col-xs-12 visible-xs-block" style="margin-top: 10px;"></div>
+                        <button type="button"
+                                class="btn btn-danger btn-block"
+                                ng-click="markSelected(3)"
+                                id="btnFindFlix">
+                            Error
+                        </button>
+                    </div>
+
+                    <div class="col-sm-2 td-bottom">
+                        <div class="col-xs-12 visible-xs-block" style="margin-top: 10px;"></div>
+                        <button type="button"
+                                class="btn btn-primary btn-block"
+                                ng-click="markSelected(2)"
+                                id="btnFindFlix">
+                            Approved Exist
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            <div id="resultsHeader" class="row" ng-show="showLeft && movies.length > 0">
+               <div class="col-xs-12">
+                  <h2><font color="lightgray">{{movies.length}} FLIX FOUND</font></h2>
+                  <HR COLOR="lightgray" SIZE="2">
+               </div>
+            </div>
+            <div class="row" ng-show="showRight" style="padding-top: 10px;">
+               <div class="col-xs-2">
+                  <img ng-click="toggleView()" style="height:175px;width:150px;padding:10px" data-ng-src="{{getMovieImage(movie)}}">
+               </div>
+                <div class="col-xs-10" style="float: right;" align="bottom">
+                  <u><b><h1 align="center"><font color="lightgray">{{movie.title}}</font></h1></b></u>
+                    <br><br>
+                  <div ng-repeat="tab in tabs">
+                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        <div class="col-xs-12 visible-xs-block" style="margin-top: 10px;"></div>
+                        <button type="button"  align="bottom"
+                           class="btn btn-primary btn-block"
+                           ng-click="selectTab(tab)"
+                           id="btnFindImages">
+                        {{tab.title}}
+                        </button>
+                     </div>
+                  </div>
+
+                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        <div class="col-xs-12 visible-xs-block" style="margin-top: 10px;"></div>
+                        <button type="button"  align="bottom"
+                           class="btn btn-danger btn-block"
+                           ng-click="saveDetails()"
+                           id="btnFindImages">
+                            SAVE
+                        </button>
+                     </div>
+               </div>
+            </div>
+            <div ng-show="isSearching" ng-init="isSearching=false;" style="z-index: 2550; position: fixed; margin: 0; padding: 0; top: 0; left: 0; bottom: 0; right: 0; background: rgba(0, 0, 0, 0.7); text-align: center;">
+               <span style="display: inline-block; height: 100%; vertical-align: middle;"></span>
+               <img src="/public/images/ajax-loader.gif" alt="Loading..." />
+            </div>
+            <div id="startingPoint"></div>
+             
+            <div class="row" style="overflow:scroll; height:2000px;">
+               <div ng-show="showLeft"  class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <!-- START SCROLL-->
+                   <div ng-repeat="movie in movies | orderBy:'title' track by $index" ng-init="index=$index"
+                        bn-log-dom-creation="with" style="color: #d2d0d0">
+                     
+                       <div class="col-sm-2 td-bottom">
+                        <div class="col-xs-12 visible-xs-block" style="margin-top: 10px;"></div>
+                        <button type="button"
+                                class="btn btn-primary btn-block"
+                                ng-click="movieTitleClick(movie)"
+                                id="btnFindFlix">
+                            Open
+                        </button>
+                    </div>
+                       
+                     <input type="checkbox" ng-model="movie.selected" checklist-value="movie.selected">
+                     <p style="display: inline"><b><u>TITLE:</u></b>&nbsp;</p><a href="">{{movie.title}}</a>
+                     <br /><p style="display: inline"><b><u>SUBJECT:</u></b>&nbsp;{{movie.subject}}</p>
+                     <br /><p style="display: inline"><b><u>LINK:</u></b>&nbsp;<a href="{{movie.movie_link}}" target="_blank">{{movie.movie_link}}</a>
+                
+                       <div class="row">
+                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" align="center">
+                              <HR COLOR="gray" SIZE="5">
+                           </div>
+                        </div>
+                   
+                   </div>
+                  <!--END SCROLL-->
+               </div>
+            </div>
+                 </div>
+            <!--RIGHT SIDE-->
+            <div id="wrapper" style="margin-left: -10px;width: 110%" ng-show="showRight" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <!--TAB-->
+               <div id="wrapper" class="row">
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" align="center">
+                     <div style="overflow:scroll; height:500px;">
+                        <div ng-show="1" ng-include="'movie_maintenance.html'"></div>
+                     </div>
+                  </div>
+                  <div id="wrapper" class="col-lg-8 col-md-8 col-sm-8 col-xs-12" align="left">                     
+                     <div ng-show="isSelected('flix_movie_tab_topics.html')">
+                        <div ng-include="'flix_movie_tab_topics.html'"></div>
+                     </div>
+                     <div ng-show="isSelected('flix_movie_tab_vendors.html')">
+                        <div ng-include="'flix_movie_tab_vendors.html'"></div>
+                     </div>
+                     <div ng-show="isSelected('flix_movie_tab_images.html')">
+                        <div ng-include="'flix_movie_tab_images.html'"></div>
+                     </div>
+                     <div ng-show="isSelected('flix_movie_tab_amazon.html')">
+                        <div ng-include="'flix_movie_tab_amazon.html'"></div>
+                     </div>
+                     <div ng-show="isSelected('flix_movie_tab_omdb.html')">
+                        <div ng-include="'flix_movie_tab_omdb.html'"></div>
+                     </div>
+                  </div>
+                  <!-- TAB END --> 
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+</body>
+</html>

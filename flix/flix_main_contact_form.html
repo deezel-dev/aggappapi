@@ -1,0 +1,36 @@
+<div data-ng-controller="contactFormCtrl" class="container" id="contact">
+    <div class="row">
+      <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" style="margin: 8px;">         
+        <div class="span4" id="contact-info">
+			<h3>Contact Us</h3>
+		  <p>We would love to hear your suggestions, and success stories using FlixAcademy!</p>
+			<p>Please contacts us using this form or by email at:</p>
+			<p><p>
+			<p><a>info@FlixAcademy.com</a></p>
+		</div>
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                <input id="txtSignMeUpName" placeholder="John Doe" type="text" ng-model="signMeUpName" class="form-control" />
+                <br>
+                <input id="txtSignMeUpEmail" placeholder="john@gmail.com" type="email" ng-model="signMeUpEmail" class="form-control" />
+                <br>
+                <input id="txtSignMeUpSubject" placeholder="General Inquiry" type="text" ng-model="signMeUpSubject" class="form-control" />
+                <br>
+                <textarea rows="4" cols="50" id="txtSignMeUpMessage" placeholder="Your message..." type="text" ng-model="signMeUpMessage" class="form-control"></textarea>
+                <br>
+                <div class="col-xs-12 visible-xs-block" style="margin-top: 10px;"></div>
+                <button type="button"
+                    class="btn btn-primary btn-block"
+                    ng-click="btnSendMessage()"
+                    id="btnSendMessage">
+                SEND
+                </button>
+            
+            </div>
+        </div>         
+      </div>
+      <div class="col-lg-2 col-md-2 visible-lg-block visible-md-block text-center">
+         <!--<br/><br/><img src="/public/images/tickets.jpg"  style="width: 99%; height: 99%; margin-left: auto;margin-right: auto;"  alt="tickets" /> -->
+      </div>
+   </div>
+</div>

@@ -1,0 +1,30 @@
+<div data-ng-int="loadTopic(null);"> <!--showMovies-->
+   <div id="resultHeader" class="row">
+        <center>
+            <h2>{{getCategory(selectedTopCategory.name)}}</br>
+            {{(movies|filter:filterList).length}} FLIX FOUND</h2>        
+        </center>
+   </div>
+   <div id="movie_list" class="container" class="row" ng-show="movies.length > 0" scroll-to-top-when="movieListUpdate">
+      <div ng-repeat="m in filteredMovies = ( movies | filter:filterList)">
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding: 10px; margin-top:5px; margin-bottom: 5px;max-height: 150px;">
+                <div align="center">
+                    <a ui-sref="flix_main_movie({movie: m})" tooltip="{{m.title}}">
+                        <img src="{{getMovieImage(m)}}"style="width: 100px; height: 150px;-webkit-box-shadow: 0px 0px 12px 0px rgba(100, 100, 100, 0.45); -moz-box-shadow: 0px 0px 12px 0px rgba(100, 100, 100, 0.45); box-shadow: 0px 0px 12px 0px rgba(100, 100, 100, 0.45);"/>
+                    </a>
+                <!-- if title is needed for movie using default image -->
+                <div align="center" style="">
+                   <div ng-show="m.product_image.length==0" id="titleDiv" style="position: absolute;top:18px;left:12px;color: #fff;background-size: 100%;background-repeat: no-repeat;width: 100px; height: 150px;">
+                           <<a ui-sref="flix_main_movie({movie: m})" style="color: #fff;" href="#" tooltip="{{m.title}}">
+                              <font color="#fff" size="2dp"><p style="margin-top: 0; font-weight: bold;">
+                                 {{m.title}}
+                              </p>
+                             </font>
+                           </a>
+                        </div>
+                      </div>
+                </div>                            
+            </div>
+         </div>
+    </div>
+</div>
