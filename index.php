@@ -20,7 +20,7 @@
    </head>
     <body data-ng-controller="indexCtrl" data-ng-init="setProfileData(<?php echo($profileID) ?>)">        
        
-       <div>AGG APP API   <?php echo $_SERVER['DOCUMENT_ROOT'] ?></div>
+       <div><font color="#000">AGG APP API   <?php echo $_SERVER['DOCUMENT_ROOT'] ?> </font></div>
         <!-- content ui-view -->
         <div style ="margin-top: 40px;" ui-view></div> <!--  autoscroll="true"  -->
 
