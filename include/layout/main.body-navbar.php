@@ -14,7 +14,7 @@
              <span class="icon-bar"></span>
          </button>
 
-         <a class="navbar-brand" ui-sref="flix_main({mode: 1})"><img style="height: 100%;" src="/public/images/logo.png" alt="deezel" /></a>
+         <a class="navbar-brand" ui-sref="flix_main({mode: 1})"><img style="height: 100%;" src="/public/images/logo.jpg" alt="deezel" /></a>
 
           <!-- nav search_bar -->
           <div style="display: inline-block">
