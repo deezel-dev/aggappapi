@@ -3,9 +3,7 @@
 ?>
 
 <header class="navbar navbar-default navbar-static-top" id="top">
-   <script>
-      document.write('<base href="' + document.location + '" />');
-   </script>
+   
    <div class="container-fluid">
       <div class="navbar-header">
 
@@ -49,23 +47,6 @@
 
                </ul>
             </li>
-         </ul>
-         <ul class="nav navbar-nav navbar-right">
-            <?php if (isset($_SESSION[SESSION_PROFILE_ID])) { ?>
-            <li class="dropdown">
-               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-               Hello,&nbsp;<strong><?php echo htmlentities($_SESSION[SESSION_PROFILE_DISPLAYNAME]) ?></strong>
-               <span class="caret"></span>
-               </a>
-               <ul class="dropdown-menu" role="menu">
-                  <li><a href="/account/signout.php">Sign Out</a></li>
-               </ul>
-            </li>
-            <?php } else { ?>
-             <li><a ui-sref="flix_account({user:null})" data-toggle="collapse">Sign In or Register</a></li>
-                         
-            <!-- <li <?php //if ($_SERVER['PHP_SELF'] == "/account/signin.php") echo "class=\"active\"" ?>><a href="/account/signin.php">Sign In or Register</a></li>-->
-            <?php } ?>
          </ul>
       </div>
    </div>
