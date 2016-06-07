@@ -1,5 +1,5 @@
 <?php 
-    $ROOT = $_SERVER['DOCUMENT_ROOT']; 
+    $ROOT = "http://" . $_SERVER['HTTP_HOST'];
 ?>
 
 <html>

@@ -1,5 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . "/include/db-config.php";
+$ROOT = "http://" . $_SERVER['HTTP_HOST'];
+require_once $ROOT . "/include/db-config.php";
 
 foreach ($_SERVER as $key => $value) {
     if (strpos($key, "MYSQLCONNSTR_") !== 0) {
