@@ -2,6 +2,7 @@
 $ROOT = "http://" . $_SERVER['HTTP_HOST'];
 require_once $ROOT . "/include/db-config.php";
 
+/*
 foreach ($_SERVER as $key => $value) {
     if (strpos($key, "MYSQLCONNSTR_") !== 0) {
         continue;
@@ -14,69 +15,188 @@ foreach ($_SERVER as $key => $value) {
  
     
     break;
-}
+}*/
 
 class Database {
-    public $con;
-    public $host;
-    public $user;
-    public $pwrd;
-    public $database;
-
-    function __construct($host, $user, $pwrd, $database){
-        $this->host = $host;
-        $this->user = $user;
-        $this->pwrd = $pwrd;
-        $this->database = $database;
-    }
 
 
-    public function open(){
-        $connected = true;
-        $this->con=mysql_connect($this->host, $this->user, $this->pwrd, $this->database);
+        public $con;
+        public $host;
+        public $user;
+        public $pwrd;
+        public $database;
+        public $serverName;
+        public $connectionOptions;
+        
+        function __construct($host, $connectionOptions){
+            //cut from signature - , $user, $pwrd, $database
+            //$this->user = $user;
+            //$this->pwrd = $pwrd;
+            //$this->database = $database;
+            $this->host = $host;
+            $this->connectionOptions = $connectionOptions;
+            
+            ini_set('display_errors',1);
+            ini_set('display_startup_errors',1);
+            error_reporting(1);
+        
+        }  
 
-        if (mysql_error()) {
-            $connected = false;
-            echo "Failed to connect to MySQL: " . mysql_connect_error();
-        }
-
-        return $connected;
-    }
-    
-    public function close() {
-        mysql_close($this->con);
-    }
-
-    public function getData($sql){
-        $myArr = array();
-
-        mysql_select_db($this->database);
-
-        $result = mysql_query($sql);
-
-        if($result){
-            while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-              $myArr[] = $row;
-            }
-            mysql_free_result($result);
-        }
-
-        return $myArr;
-    }
-
-    public function insertData($sql){
-        mysql_select_db($this->database);
-        return $result = mysql_query($sql);
+        public function close() {
+        sqlsrv_close($this->con);
     }
     
     public function execute($sql){
-        mysql_select_db($this->database);
-        return $result = mysql_query($sql);
+        sqlsrv_select_db($this->database);
+        return $result = sqlsrv_query($sql);
     }
+
+    public function open(){
+        
+            $connected = true;
+            $this->con=sqlsrv_connect($this->host, $this->connectionOptions); 
+            
+            //mysql_connect
+            if ($this->con==false) {
+                $connected = false;
+                echo "Failed to connect to SQL: ";                      
+            
+                if( ($errors = sqlsrv_errors() ) != null) {
+                    foreach( $errors as $error ) {
+                        echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+                        echo "code: ".$error[ 'code']."<br />";
+                        echo "message: ".$error[ 'message']."<br />";
+                    }
+                }
+            
+            }
+            
+            return $connected;
+        
+        }
+
+
+
+        
+        public function getData($tsql) {
+        
+            $myArr[] = null;
+            
+            try  {
+                $conn = $this->con;                
+                $getObjects = sqlsrv_query($conn, $tsql);
+                if ($getObjects == FALSE){
+                    if( ($errors = sqlsrv_errors() ) != null) {
+                    foreach( $errors as $error ) {
+                        echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+                        echo "code: ".$error[ 'code']."<br />";
+                        echo "message: ".$error[ 'message']."<br />";
+                    }
+                }
+                }
+                    
+                $objectCount = 0;
+            
+                while($row = sqlsrv_fetch_array($getObjects, SQLSRV_FETCH_ASSOC)){
+                    $myArr[] = $row;
+                }
+            
+                sqlsrv_free_stmt($getObjects);
+                sqlsrv_close($conn);
+            
+            } catch(Exception $e) {
+                echo("Error!");
+            }
+            
+            return $myArr;
+        }
+        
+        public function insertData($sql){
+        
+            
+            $retVal = false;
+            $conn = $this->con;
+            
+            $result = sqlsrv_query($this->con, $sql);
+            
+            if(!$result) {
+            
+                if( ($errors = sqlsrv_errors() ) != null) {
+                    foreach( $errors as $error ) {
+                        echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+                        echo "code: ".$error[ 'code']."<br />";
+                        echo "message: ".$error[ 'message']."<br />";
+                    }
+                }
+                
+                return $result;
+                exit;
+                
+            } else {
+                $retVal = true;
+            }
+            
+            sqlsrv_free_stmt($result);
+            sqlsrv_close($conn);
+            
+            return $retVal; 
+        
+        }
+        
+        public function updateData($sql){
+        
+        $retVal = false;
+        $conn = $this->con;
+            
+            $result = sqlsrv_query($this->con, $sql);
+            if(!$result) {
+            
+                if( ($errors = sqlsrv_errors() ) != null) {
+                    foreach( $errors as $error ) {
+                        $err .= "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+                        $err .= "code: ".$error[ 'code']."<br />";
+                        $err .= "message: ".$error[ 'message']."<br />";
+                    }
+                }
+                
+                return $err;
+                exit;
+                
+            } else {
+                $retVal = true;
+            }
+            
+            sqlsrv_free_stmt($result);
+            sqlsrv_close($conn);
+            
+            return $retVal; 
+        
+        }   
+    
 }
 
-function getDatabase(){
-    $data = new Database($GLOBALS['DB_HOST'], $GLOBALS['DB_USER'], $GLOBALS['DB_PASSWORD'], $GLOBALS['DB_NAME']);
+  function getDatabase(){
+    $serverName = "tcp:deezel-dev.cloudapp.net";
+    $connectionOptions = array("Database"=>'PropheticMinistries',
+                               "UID"=>'web_user', "PWD"=>'p@$$w0rd');
+    
+    $data = new Database($serverName, $connectionOptions);
     return  $data;
-}
+  }
+  
+  function getDatabaseX(){
+    $serverName = $GLOBALS['DB_HOST'];
+    $connectionOptions = array("Database"=>$GLOBALS['DB_NAME'],
+                               "UID"=>$GLOBALS['DB_USER'], "PWD"=>$GLOBALS['DB_PASSWORD']);
+    
+    $data = new Database($serverName, $connectionOptions);
+    //$data = new Database('deezel-dev.cloudapp.net', 'webuser', 'P@ssw0rd928', 'OneWord');
+    return  $data;
+  }
+  
+  
+
+    
+
+
 ?>
