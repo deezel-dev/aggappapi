@@ -23,16 +23,6 @@
        <div>AGG APP API</div>
         <!-- content ui-view -->
         <div style ="margin-top: 40px;" ui-view></div> <!--  autoscroll="true"  -->
-       
-        <hr>
-        <!-- welcome -->
-        <div><?php require $ROOT . "/flix/flix_main_welcome_message.html" ?></div>
-   
-        <!-- main logo -->
-        <div><?php require $ROOT . "/flix/flix_main_logo.html" ?></div>
-   
-        <!-- footer -->
-        <div><?php require $ROOT . "/flix/flix_main_footer.html" ?></div>
 
         <!-- static navbar - top -->
         <div style="position: fixed; top: 0px;width: 100%;margin: 0px;padding: 0px;">
