@@ -2,7 +2,9 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
     .config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
         "use strict";
         $urlRouterProvider.otherwise('/home');
-
+           
+           alert('app');
+           
         $stateProvider
 
         // MAIN VIEW - LANDING PAGE
