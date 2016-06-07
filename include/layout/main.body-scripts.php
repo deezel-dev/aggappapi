@@ -7,7 +7,7 @@
 <script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
 <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.3.js"></script>
 
-<?php require "http://" . $_SERVER['HTTP_HOST']. "/include/layout/partial/script-ga.php" ?>
+<?php require "http://aggappapi.azurewebsites.net/include/layout/partial/script-ga.php" ?>
 
 
 <!-- Danny added 1.12.16
