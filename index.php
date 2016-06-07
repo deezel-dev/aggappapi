@@ -9,7 +9,7 @@
    <head>
       <?php require $ROOT . "/include/layout/main.head.php" ?>
    </head>
-    <body data-ng-controller="indexCtrl" data-ng-init="setProfileData(<?php echo($profileID) ?>)">        
+    <body data-ng-controller="indexCtrl">        
        
        <div><font color="#000"></font>AGG APP API   <?php echo $ROOT ?></div>
         <!-- content ui-view -->
