@@ -1,7 +1,6 @@
 <?php
    $ROOT = "http://" . $_SERVER['HTTP_HOST'];
    require_once $ROOT . "/include/_init.php";
-   
 ?>
 
 <!DOCTYPE html>
@@ -11,20 +10,7 @@
    </head>
     <body data-ng-controller="indexCtrl">        
        
-       <div><font color="#000"></font>AGG APP API   <?php echo $ROOT ?></div>
-        
-        <!-- 
-        <div style ="margin-top: 40px;" ui-view></div> 
 
-        
-        <div style="position: fixed; top: 0px;width: 100%;margin: 0px;padding: 0px;">
-        <?php require $//ROOT . "/include/layout/main.body-navbar.php" ?>
-        </div>
-
-        
-        <?php require //$ROOT . "/include/layout/main.body-scripts.php" ?>
-        -->
-        <script src="/flix/app.js"></script>
 
     </body>
 </html>
