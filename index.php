@@ -2,7 +2,6 @@
 
 
    $ROOT = "http://" . $_SERVER['HTTP_HOST'];
-   echo $ROOT;
 
    require_once $ROOT . "/include/_init.php";
 

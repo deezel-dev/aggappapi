@@ -1,5 +1,5 @@
 <?php 
-    $ROOT = $_SERVER['DOCUMENT_ROOT']; 
+    $ROOT = "http://" . $_SERVER['HTTP_HOST']; 
 ?>
 
 <header class="navbar navbar-default navbar-static-top" id="top">
