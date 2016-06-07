@@ -19,11 +19,11 @@
 
         <!-- static navbar - top
         <div style="position: fixed; top: 0px;width: 100%;margin: 0px;padding: 0px;">
-        <?php require //$ROOT . "/include/layout/main.body-navbar.php" ?>
+        <?php //require $ROOT . "/include/layout/main.body-navbar.php" ?>
         </div>
 
         <!-- load all scripts 
-        <?php require //$ROOT . "/include/layout/main.body-scripts.php" ?>
+        <?php //require $ROOT . "/include/layout/main.body-scripts.php" ?>
         <script src="/flix/app.js"></script>
 
     </body>
