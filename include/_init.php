@@ -15,6 +15,6 @@ function displayErrorIfDevelopment() {
     }
 }
 
-require_once "http://" . $_SERVER['HTTP_HOST'] . "/include/constants.php";
+require_once "http://aggappapi.azurewebsites.net/include/constants.php";
 session_start();
 ?>

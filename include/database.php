@@ -1,6 +1,6 @@
 <?php
 $ROOT = "http://" . $_SERVER['HTTP_HOST'];
-require_once $ROOT . "/include/db-config.php";
+require_once "http://aggappapi.azurewebsites.net/include/db-config.php";
 
 /*
 foreach ($_SERVER as $key => $value) {
