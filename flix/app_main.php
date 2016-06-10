@@ -24,10 +24,11 @@
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">                    
                     <div style="padding-left:20px;margin-top:20px;">
                         <div id="market_details">
-                            <u><b>Address:</b></u>&nbsp;{{marketdetails.Address}}
-                            <br><u><b>GoogleLink:</b></u>&nbsp;<a href="{{marketdetails.GoogleLink}}" target="_blank">{{marketdetails.GoogleLink}}</a>
-                            <br><u><b>Products:</b></u>&nbsp;{{marketdetails.Products}}
-                            <br><u><b>Schedule:</b></u>&nbsp;{{marketdetails.Schedule}}
+                            <h3><u><b>Market:</b></u>&nbsp;&nbsp;{{market.marketname}}</h3>
+                            <br><u><b>Address:</b></u>&nbsp;&nbsp;{{marketdetails.Address}}
+                            <br><u><b>GoogleLink:</b></u>&nbsp;&nbsp;<a href="{{marketdetails.GoogleLink}}" target="_blank">{{marketdetails.GoogleLink}}</a>
+                            <br><u><b>Products:</b></u>&nbsp;&nbsp;{{marketdetails.Products}}
+                            <br><u><b>Schedule:</b></u>&nbsp;&nbsp;{{marketdetails.Schedule}}
                             <br>
                         </div>
                     </div>
