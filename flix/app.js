@@ -654,7 +654,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
     .controller("mainCtrl", ['$scope', '$rootScope', '$state', '$stateParams', '$http', '$window', 'farmers_market', function ($scope, $rootScope, $state, $stateParams, $http, $window, farmers_market) {
         
         $scope.markets = [];
-        $scope.markets = farmers_market.getMarkets();
+        $scope.markets = farmers_market.getMarkets('14580');
         
         
     } ])
