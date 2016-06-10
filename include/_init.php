@@ -1,5 +1,7 @@
 <?php
 echo "<b><u>INCLUDE1</u></b>";
+
+/*
 $GLOBALS["IsDevelopment"] = 1; //($_SERVER['HTTP_HOST'] == "aggappapi.azurewebsites.net") || ($_SERVER['HTTP_HOST'] == "flixacademy-dev-danny.azurewebsites.net") ? 1 : 0;
 
 echo "<b><u>INCLUDE2</u></b>";
@@ -21,4 +23,5 @@ function displayErrorIfDevelopment() {
 require_once "http://aggappapi.azurewebsites.net/include/constants.php";
 session_start();
 echo "<b><u>INCLUDE</u></b>";
+*/
 ?>
