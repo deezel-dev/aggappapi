@@ -673,14 +673,16 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
     .controller("mainCtrl", ['$scope', '$rootScope', '$state', '$stateParams', '$http', '$window', 'farmers_market', function ($scope, $rootScope, $state, $stateParams, $http, $window, farmers_market) {
         
         $scope.markets = [];
+        $scope.market = {};
         $scope.marketdetails = {};
         
         $scope.btnSearchZip = function (zip_code){
             farmers_market.getMarkets(zip_code);
         }
         
-        $scope.search_market = function (market_id){
-            farmers_market.getMarketInfo(market_id);
+        $scope.search_market = function (market){
+            $scope.market = market;
+            farmers_market.getMarketInfo(market.id);
         }
         
         $scope.$on('market_list_updated', function () {
