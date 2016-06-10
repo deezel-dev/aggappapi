@@ -18,20 +18,13 @@
 
           <!-- nav search_bar -->
           <div style="display: inline-block">
-               <div style="margin:5px;">DEEZEL DATA</div>
+               <div style="margin-top:15px;"><font style="color: #8fcb67;" size="+5">DEEZEL DATA</font></div>
           </div>
 
       </div>
 
       <div id="navbar" class="navbar-collapse collapse">
          <ul class="nav navbar-nav navbar-left">
-
-            <li class="dropdown" style="color: #73be41;">
-               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Navigation<span class="caret"></span></a>
-               <ul class="dropdown-menu" role="menu">
-                  
-               </ul>
-            </li>
          </ul>
       </div>
    </div>
