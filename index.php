@@ -1,7 +1,9 @@
 <?php
    $ROOT = "http://" . $_SERVER['HTTP_HOST'];
+   $INIT = $ROOT . "/include/_init.php";
+   echo $INIT;
    require_once $ROOT . "/include/_init.php";
-   echo $ROOT . "<br>rtertwertwret<br>";
+   //echo $ROOT . "<br>rtertwertwret<br>";
    
 ?>
 <!DOCTYPE html>
