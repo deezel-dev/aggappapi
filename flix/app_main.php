@@ -22,7 +22,7 @@
                 </div>
                 
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">                    
-                    <div style="padding-left:20px;">
+                    <div style="padding-left:20px;margin-top:20px;">
                         <div id="market_details">
                             <u><b>Address:</b></u>&nbsp;{{marketdetails.Address}}
                             <br><u><b>GoogleLink:</b></u>&nbsp;<a href="{{marketdetails.GoogleLink}}" target="_blank">{{marketdetails.GoogleLink}}</a>
