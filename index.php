@@ -1,5 +1,6 @@
 <?php
    $ROOT = "http://" . $_SERVER['HTTP_HOST'];
+   echo $ROOT . "<br><br>";
    //require_once //"http://aggappapi.azurewebsites.net/include/_init.php";
 ?>
 <!DOCTYPE html>
