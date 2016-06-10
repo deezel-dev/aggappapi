@@ -14,7 +14,7 @@
         <div style ="margin-top: 40px;" ui-view></div> <!--  autoscroll="true"  -->
 
         <!-- static navbar - top -->
-        <div style="position: fixed; top: 0px;width: 100%;margin: 0px;padding: 0px;">
+        <div style="position: fixed; top: 0px;width: 100%;margin: 0px;padding: 0px;height:50px;">
             <?php require ("/include/layout/main.body-navbar.php") ?>
         </div>
 
