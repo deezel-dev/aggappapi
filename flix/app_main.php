@@ -21,14 +21,14 @@
                     </div>
                 </div>
                 
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">                    
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" data-ng-show="isEmpty({{market}})">                    
                     <div style="padding-left:20px;margin-top:20px;">
                         <div id="market_details">
                             <h3>{{market.marketname}}</h3>
-                            <br><u><b>Address:</b></u>&nbsp;&nbsp;{{marketdetails.Address}}
-                            <br><u><b>GoogleLink:</b></u>&nbsp;&nbsp;<a href="{{marketdetails.GoogleLink}}" target="_blank">{{marketdetails.GoogleLink}}</a>
-                            <br><u><b>Products:</b></u>&nbsp;&nbsp;{{marketdetails.Products}}
-                            <br><u><b>Schedule:</b></u>&nbsp;&nbsp;{{marketdetails.Schedule}}
+                            <u><b>Address:</b></u>&nbsp;&nbsp;{{marketdetails.Address}}
+                            <br><br><u><b>GoogleLink:</b></u>&nbsp;&nbsp;<a href="{{marketdetails.GoogleLink}}" target="_blank">{{marketdetails.GoogleLink}}</a>
+                            <br><br><u><b>Products:</b></u>&nbsp;&nbsp;{{marketdetails.Products}}
+                            <br><br><u><b>Schedule:</b></u>&nbsp;&nbsp;{{marketdetails.Schedule}}
                             <br>
                         </div>
                     </div>

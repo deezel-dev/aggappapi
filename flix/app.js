@@ -693,7 +693,10 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             $scope.marketdetails = farmers_market.marketdetails;
         });
         
-        
+        $scope.isEmpty = function (obj) {
+            for (var i in obj) if (obj.hasOwnProperty(i)) return false;
+            return true;
+        };
         
     } ])
     .controller("gridCtrl", ['$scope', '$state', '$stateParams', '$http', '$window', '$location', '$filter', 'dataService', function ($scope, $state, $stateParams, $http, $window, $location, $filter, dataService) {
