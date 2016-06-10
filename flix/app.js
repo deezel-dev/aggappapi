@@ -636,12 +636,14 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
     .service('farmers_market', ['$http', '$rootScope', '$window', '$q', '$state', function ($http, $rootScope, $window, $q, $state) {
 
         var farmers_market = this;
-
+        alert('farmers_market var ');
         farmers_market.markets = [];
 
         farmers_market.getMarkets = function (zip) {
+            alert('searching ' + zip);
             var promise = $http.get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + zip).then(function (response) {
                 farmers_market.markets = response.data.results;
+                alert('length = ' + farmers_market.markets.length);
                 return farmers_market.markets;
             });
             return promise;
