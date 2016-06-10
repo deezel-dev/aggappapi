@@ -14,7 +14,7 @@
              <span class="icon-bar"></span>
          </button>
 
-         <a class="navbar-brand" ui-sref="flix_main({mode: 1})"><img style="height: 100%;" src="/public/images/logo.jpg" alt="deezel" /></a>
+         <a class="navbar-brand" ui-sref="flix_main({mode: 1})"><img style="height: 100%;" src="/public/images/logo.png" alt="deezel" /></a>
 
           <!-- nav search_bar -->
           <div style="display: inline-block">
@@ -26,7 +26,7 @@
       <div id="navbar" class="navbar-collapse collapse">
          <ul class="nav navbar-nav navbar-left">
 
-            <li class="dropdown">
+            <li class="dropdown" style="color: #73be41;">
                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Navigation<span class="caret"></span></a>
                <ul class="dropdown-menu" role="menu">
                   
