@@ -5,14 +5,13 @@
 ?>
 <!DOCTYPE html>
 <html data-ng-app="app" lang="en" style="width: 100%;height: 100%;margin: 0px;padding: 0px;overflow-x: hidden;">
-
-       <head>
+   <head>
       <?php require ("/include/layout/main.head.php") ?>
    </head>
     <body data-ng-controller="indexCtrl">        
         
         <!-- content ui-view -->
-        <div style ="margin-top: 40px;" ui-view>VIEW</div> <!--  autoscroll="true"  -->
+        <div style ="margin-top: 40px;" ui-view></div> <!--  autoscroll="true"  -->
 
         <!-- static navbar - top -->
         <div style="position: fixed; top: 0px;width: 100%;margin: 0px;padding: 0px;">
