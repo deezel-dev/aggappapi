@@ -26,10 +26,6 @@
       <div id="navbar" class="navbar-collapse collapse">
          <ul class="nav navbar-nav navbar-left">
 
-            <?php if (isset($_SESSION[SESSION_PROFILE_ID])) { ?>                
-                <li><a ui-sref="flix_main({mode: 2})" data-toggle="collapse" data-target=".navbar-collapse.in">My Playlist</a></li>
-            <?php } ?>
-
             <li class="dropdown">
                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Navigation<span class="caret"></span></a>
                <ul class="dropdown-menu" role="menu">
