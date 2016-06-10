@@ -5,10 +5,10 @@
 <html>
    <body> 
 
-        <div data-ng-init=""></div>
-
         <!-- home -->
-        <div id="home"><?php require ("/flix/landing_page/01_home.html") ?></div>
+        <div id="home">
+            <div class="container" align="center"><font color="#000" size ="+6">HOME PAGE</font></div>
+        </div>
 
    </body>
 </html>
