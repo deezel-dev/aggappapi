@@ -3,6 +3,7 @@
    $INIT = $ROOT . "/include/_init.php";
    echo $INIT;
    require_once $INIT;
+   testInit();
    //echo $ROOT . "<br>rtertwertwret<br>";
    
 ?>
