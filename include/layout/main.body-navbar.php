@@ -2,7 +2,7 @@
     //$ROOT = "http://" . $_SERVER['HTTP_HOST']; 
 ?>
 
-<header class="navbar navbar-default navbar-static-top" style="background-color: #CC3333">
+<header class="navbar navbar-default navbar-static-top" style="color: #73be41; background-color: #262626">
    
    <div class="container-fluid">
       <div class="navbar-header">
@@ -18,7 +18,7 @@
 
           <!-- nav search_bar -->
           <div style="display: inline-block">
-            
+               <div>DEEZEL DATA</div>
           </div>
 
       </div>
@@ -29,17 +29,7 @@
             <li class="dropdown">
                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Navigation<span class="caret"></span></a>
                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#flix_main?scrollTo=#how" data-toggle="collapse" data-target=".navbar-collapse.in">How it Works</a></li>
-                  <li><a href="#flix_main?scrollTo=#about" data-toggle="collapse" data-target=".navbar-collapse.in">About</a></li>
-                  <li><a href="#flix_main?scrollTo=#updates" data-toggle="collapse" data-target=".navbar-collapse.in">News</a></li>
-                  <li><a href="#flix_main?scrollTo=#screenshots" data-toggle="collapse" data-target=".navbar-collapse.in">Screenshots</a></li>
-                  <li><a href="#flix_main?scrollTo=#contact" data-toggle="collapse" data-target=".navbar-collapse.in">Contact</a></li>
                   
-                  <hr>
-                  <div style="padding-left: 10px;"><font color="white">Follow Us</font></div>
-                  <li><a href="http://twitter.com/FlixAcademy" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in">Twitter</a></li>
-                  <li><a href="http://facebook.com/FlixAcademy" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in">Facebook</a></li>
-
                </ul>
             </li>
          </ul>
