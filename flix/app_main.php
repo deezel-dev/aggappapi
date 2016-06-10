@@ -13,7 +13,8 @@
                 <button ng-click="btnSearchZip(zip_code)" class="btn btn-primary btn-xs">Search</button>
                 <br><br>
                 <div id="market_list" ng-repeat="market in markets">
-                    <font color="#000">{{market.id}}: &nbsp;&nbsp; {{market.marketname}} </font> 
+                    <font color="#000">
+                        <a data-ng-click="search_market({{market.id}})">{{market.id}}</a>: &nbsp;&nbsp; {{market.marketname}} </font> 
                 </div>
             </div>
         </div>

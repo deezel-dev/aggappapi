@@ -663,6 +663,12 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             farmers_market.getMarkets(zip_code);
         }
         
+        $scope.search_market = function (market_id){
+            alert(market_id);
+        }
+        
+        
+        
         $scope.$on('market_list_updated', function () {
             $scope.markets = farmers_market.markets;
         });
