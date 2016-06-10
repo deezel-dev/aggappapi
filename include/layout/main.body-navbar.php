@@ -1,5 +1,5 @@
 <?php 
-    $ROOT = "http://" . $_SERVER['HTTP_HOST']; 
+    //$ROOT = "http://" . $_SERVER['HTTP_HOST']; 
 ?>
 
 <header class="navbar navbar-default navbar-static-top" id="top">
@@ -18,8 +18,7 @@
 
           <!-- nav search_bar -->
           <div style="display: inline-block">
-            <div class="visible-xs"><?php require $ROOT . "/flix/mobile/flix_nav_search.html" ?></div>
-            <div class="visible-sm visible-md visible-lg"><?php require $ROOT . "/flix/desktop/flix_nav_search.html" ?></div>
+            
           </div>
 
       </div>
