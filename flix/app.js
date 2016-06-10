@@ -655,6 +655,8 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                             return response.data.marketdetails;
                         });
                         
+                        alert(marketdetails.Address);
+                        
                         market.marketdetails = marketdetails;
                         farmers_market.markets.push(market);
                         
