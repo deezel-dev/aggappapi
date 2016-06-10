@@ -673,7 +673,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
     .controller("mainCtrl", ['$scope', '$rootScope', '$state', '$stateParams', '$http', '$window', 'farmers_market', function ($scope, $rootScope, $state, $stateParams, $http, $window, farmers_market) {
         
         $scope.markets = [];
-        $scope.market = {};
+        $scope.market = null;
         $scope.marketdetails = {};
         
         $scope.btnSearchZip = function (zip_code){
