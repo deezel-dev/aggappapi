@@ -14,7 +14,22 @@
                         <br><br>
             </div>
             
+           <div class="row">
+             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" data-ng-show="markets.length>0">                    
+                        <div style="padding-left:20px;margin-top:10px;">
+                            <div id="market_details">
+                                <b><h3>{{market.marketname}} - market.id</h3></b>
+                                <u><b>Address:</b></u>&nbsp;&nbsp;{{market.marketdetails.Address}}
+                                <br><br><u><b>GoogleLink:</b></u>&nbsp;&nbsp;<a href="{{marketdetails.GoogleLink}}" target="_blank">{{market.marketdetails.GoogleLink}}</a>
+                                <br><br><u><b>Products:</b></u>&nbsp;&nbsp;{{market.marketdetails.Products}}
+                                <br><br><u><b>Schedule:</b></u>&nbsp;&nbsp;{{market.marketdetails.Schedule}}
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+           </div>
             
+            <!-- 
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">                    
                     <div style="padding-left:20px;">
@@ -26,7 +41,7 @@
                 </div>
                 
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" data-ng-show="market.id>0">                    
-                    <div style="padding-left:20px;margin-top:20px;">
+                    <div style="padding-left:20px;margin-top:10px;">
                         <div id="market_details">
                             <b><h3>{{market.marketname}}</h3></b>
                             <u><b>Address:</b></u>&nbsp;&nbsp;{{marketdetails.Address}}
@@ -38,7 +53,7 @@
                     </div>
                 </div>
             </div>
-            
+            -->
         </div>
    </body>
 </html>

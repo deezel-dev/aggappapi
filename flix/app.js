@@ -638,8 +638,31 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         var farmers_market = this;
         farmers_market.markets = [];
         farmers_market.marketdetails = {};
-
+        
         farmers_market.getMarkets = function (zip) {
+            var promise = $http.get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + zip).then(function (response) {
+                
+                farmers_market.markets = [];
+                var market_list = response.data.results;
+                
+                angular.forEach(market_list, function (entry, index) {
+
+                        var market ={};
+                        
+                        market.id = entry.id;
+                        market.marketname = entry.marketname;
+                        market.marketdetails = farmers_market.getMarketInfo(market.id);
+                        farmers_market.markets.push(market);
+                        
+                    });
+                
+                farmers_market.broadcastMarkets();
+                return farmers_market.markets;
+            });
+            return promise;
+        }
+
+        farmers_market.getMarketsByZip = function (zip) {
             var promise = $http.get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + zip).then(function (response) {
                 farmers_market.markets = response.data.results;
                 farmers_market.broadcastMarkets();
@@ -682,7 +705,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         
         $scope.search_market = function (market){
             $scope.market = market;
-            farmers_market.getMarketInfo(market.id);
+            farmers_market.getMarketsByZip(market.id);
         }
         
         $scope.$on('market_list_updated', function () {
