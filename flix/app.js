@@ -659,7 +659,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         }
         
         farmers_market.addMarketItem = function (_market) {
-            var promise = $http.get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=' + market_id).then(function (response) {
+            var promise = $http.get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=' + _market.id).then(function (response) {
                 
                 var marketdetails = response.data.marketdetails;
                 
