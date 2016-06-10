@@ -2,7 +2,7 @@
     //$ROOT = "http://" . $_SERVER['HTTP_HOST']; 
 ?>
 
-<header class="navbar navbar-default navbar-static-top" id="top">
+<header class="navbar navbar-default navbar-static-top" style="background:#0f7">
    
    <div class="container-fluid">
       <div class="navbar-header">
