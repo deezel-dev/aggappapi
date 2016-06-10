@@ -2,9 +2,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
     .config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
         "use strict";
         $urlRouterProvider.otherwise('/home');
-           
-           alert('app');
-           
+            
         $stateProvider
 
         // MAIN VIEW - LANDING PAGE
@@ -658,7 +656,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             dataService.setProfileId(profileId);
         }
 
-        dataService.getMovies();
+        //dataService.getMovies();
 
         $scope.modalShown = false;
         $scope.toggleModal = function () {
@@ -673,7 +671,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         var PLAYLIST_MODE = 2;
 
         var mode = $stateParams.mode;
-        dataService.listMode = mode;
+        //dataService.listMode = mode;
 
         switch (mode) {
             case NORMAL_MODE:

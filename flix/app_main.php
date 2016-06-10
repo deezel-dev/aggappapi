@@ -5,7 +5,7 @@
 <html>
    <body> 
 
-        <div data-ng-init="init()"></div>
+        <div data-ng-init=""></div>
 
         <!-- home -->
         <div id="home"><?php require ("/flix/landing_page/01_home.html") ?></div>
