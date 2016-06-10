@@ -10,13 +10,13 @@
       <?php require ("/include/layout/main.head.php") ?>
    </head>
     <body data-ng-controller="indexCtrl">        
-        <div>INDEX</div>
+        
         <!-- content ui-view -->
-        <div style ="margin-top: 40px;" ui-view></div> <!--  autoscroll="true"  -->
+        <div style ="margin-top: 40px;" ui-view>VIEW</div> <!--  autoscroll="true"  -->
 
         <!-- static navbar - top -->
         <div style="position: fixed; top: 0px;width: 100%;margin: 0px;padding: 0px;">
-        <?php require ("/include/layout/main.body-navbar.php") ?>
+            <?php require ("/include/layout/main.body-navbar.php") ?>
         </div>
 
         <!-- load all scripts -->
