@@ -637,7 +637,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
     } ])
     .controller("mainCtrl", ['$scope', '$rootScope', '$state', '$stateParams', '$http', '$window', function ($scope, $rootScope, $state, $stateParams, $http, $window) {
-
+        alert("mainCtrl");
     } ])
     .controller("gridCtrl", ['$scope', '$state', '$stateParams', '$http', '$window', '$location', '$filter', 'dataService', function ($scope, $state, $stateParams, $http, $window, $location, $filter, dataService) {
 
