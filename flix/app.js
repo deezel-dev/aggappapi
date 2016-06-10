@@ -508,7 +508,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
             } else {
 
-                alert("Please sign in or create an account to create a FlixREMIX lesson plan for this movie.");
+                //alert("Please sign in or create an account to create a FlixREMIX lesson plan for this movie.");
 
             }
         }
@@ -528,8 +528,8 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
             } else {
 
-                alert("Please sign in or create an account to create a " +
-                        "FlixREMIX lesson plan for this movie.");
+                //alert("Please sign in or create an account to create a " +
+                        //"FlixREMIX lesson plan for this movie.");
 
             }
 
@@ -633,10 +633,10 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         }
 
     } ])
-    .controller("indexCtrl", ['$scope', '$window', '$location', 'dataService', function ($scope, $window, $location, dataService) {
+    .controller("indexCtrl", ['$scope', '$window', '$location', function ($scope, $window, $location) {
 
     } ])
-    .controller("mainCtrl", ['$scope', '$rootScope', '$state', '$stateParams', '$http', '$window', 'dataService', function ($scope, $rootScope, $state, $stateParams, $http, $window, dataService) {
+    .controller("mainCtrl", ['$scope', '$rootScope', '$state', '$stateParams', '$http', '$window', function ($scope, $rootScope, $state, $stateParams, $http, $window) {
 
     } ])
     .controller("gridCtrl", ['$scope', '$state', '$stateParams', '$http', '$window', '$location', '$filter', 'dataService', function ($scope, $state, $stateParams, $http, $window, $location, $filter, dataService) {
