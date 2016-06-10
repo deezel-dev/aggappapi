@@ -15,7 +15,7 @@
             </div>
             
            <div class="row">
-             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" data-ng-show="markets.length>0" ng-repeat="market in markets">                    
+             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8" data-ng-show="markets.length>0" ng-repeat="market in markets">                    
                         <div style="padding-left:20px;margin-top:10px;">
                             <div id="market_details">
                                 <b><h3>{{market.marketname}} - {{market.id}}</h3></b>
