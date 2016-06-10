@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" data-ng-show="isEmpty({{market}})">                    
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" data-ng-show="market.id>0">                    
                     <div style="padding-left:20px;margin-top:20px;">
                         <div id="market_details">
                             <h3>{{market.marketname}}</h3>
