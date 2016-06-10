@@ -645,25 +645,35 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                 farmers_market.markets = [];
                 var market_list = response.data.results;
                 
-                angular.forEach(market_list, function (entry, index) {
+                angular.forEach(market_list, function (market, index) {
 
-                        var market ={};                        
-                        market.id = entry.id;
-                        market.marketname = entry.marketname;
+                        //var market ={};                        
+                        //market.id = entry.id;
+                        //market.marketname = entry.marketname;
+                        farmers_market.addMarketItem(market);
                         
-                        var marketdetails = $http.get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=' + entry.id).then(function (response) {
-                            return response.data.marketdetails;
-                        });
-                        
-                        alert(marketdetails.Address);
-                        
-                        market.marketdetails = marketdetails;
-                        farmers_market.markets.push(market);
                         
                     });
                 
                 farmers_market.broadcastMarkets();
                 return farmers_market.markets;
+            });
+            return promise;
+        }
+        
+        farmers_market.addMarketItem = function (_market) {
+            var promise = $http.get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=' + market_id).then(function (response) {
+                
+                var marketdetails = response.data.marketdetails;
+                
+                var market = {};
+                market.id = _market.id;
+                market.marketName = _market.marketName;
+                market.marketdetails = marketdetails;
+                
+                farmers_market.markets.push(market);
+                
+                return marketdetails;
             });
             return promise;
         }
