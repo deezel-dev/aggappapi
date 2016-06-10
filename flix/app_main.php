@@ -12,7 +12,7 @@
         
        <div id="market_list" ng-repeat="market in markets">
             <div class="container" align="center">
-                <font color="#000">market.id &nbsp;&nbsp; marketname </font>
+                <font color="#000">{{market.id}}: &nbsp;&nbsp; {{market.marketname}} </font>
             </div>                
       </div>
 
