@@ -17,4 +17,5 @@ function displayErrorIfDevelopment() {
 
 require_once "http://aggappapi.azurewebsites.net/include/constants.php";
 session_start();
+echo "<b><u>INCLUDE</u></b>"
 ?>
