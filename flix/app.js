@@ -637,6 +637,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
         var farmers_market = this;
         farmers_market.markets = [];
+        farmers_market.marketdetails = {};
 
         farmers_market.getMarkets = function (zip) {
             var promise = $http.get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + zip).then(function (response) {
@@ -650,6 +651,20 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         farmers_market.broadcastMarkets = function () {
             $rootScope.$broadcast('market_list_updated');
         };
+        
+        
+        farmers_market.getMarketInfo = function (market_id) {
+            var promise = $http.get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=' + market_id).then(function (response) {
+                farmers_market.marketdetails = response.data.marketdetails;
+                farmers_market.broadcastMarketDetails();
+                return farmers_market.marketdetails;
+            });
+            return promise;
+        }
+        
+        farmers_market.broadcastMarketDetails = function () {
+            $rootScope.$broadcast('market_item_update');
+        };
 
     } ])
     .controller("indexCtrl", ['$scope', '$window', '$location', function ($scope, $window, $location) {
@@ -658,20 +673,25 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
     .controller("mainCtrl", ['$scope', '$rootScope', '$state', '$stateParams', '$http', '$window', 'farmers_market', function ($scope, $rootScope, $state, $stateParams, $http, $window, farmers_market) {
         
         $scope.markets = [];
+        $scope.marketdetails = {};
         
         $scope.btnSearchZip = function (zip_code){
             farmers_market.getMarkets(zip_code);
         }
         
         $scope.search_market = function (market_id){
-            alert(market_id);
+            farmers_market.getMarketInfo(market_id);
         }
-        
-        
         
         $scope.$on('market_list_updated', function () {
             $scope.markets = farmers_market.markets;
         });
+        
+        $scope.$on('market_item_update', function () {
+            $scope.marketdetails = farmers_market.marketdetails;
+        });
+        
+        
         
     } ])
     .controller("gridCtrl", ['$scope', '$state', '$stateParams', '$http', '$window', '$location', '$filter', 'dataService', function ($scope, $state, $stateParams, $http, $window, $location, $filter, dataService) {
