@@ -633,10 +633,29 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         }
 
     } ])
+    .service('farmers_market', ['$http', '$rootScope', '$window', '$q', '$state', function ($http, $rootScope, $window, $q, $state) {
+
+        var farmers_market = this;
+
+        farmers_market.markets = [];
+
+        farmers_market.getMarkets = function (zip) {
+            var promise = $http.get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + zip).then(function (response) {
+                farmers_market.markets = response.data.results;
+                return farmers_market.markets;
+            });
+            return promise;
+        }
+
+    } ])
     .controller("indexCtrl", ['$scope', '$window', '$location', function ($scope, $window, $location) {
 
     } ])
-    .controller("mainCtrl", ['$scope', '$rootScope', '$state', '$stateParams', '$http', '$window', function ($scope, $rootScope, $state, $stateParams, $http, $window) {
+    .controller("mainCtrl", ['$scope', '$rootScope', '$state', '$stateParams', '$http', '$window', 'farmers_market', function ($scope, $rootScope, $state, $stateParams, $http, $window, farmers_market) {
+        
+        $scope.markets = [];
+        $scope.markets = farmers_market.getMarkets();
+        
         
     } ])
     .controller("gridCtrl", ['$scope', '$state', '$stateParams', '$http', '$window', '$location', '$filter', 'dataService', function ($scope, $state, $stateParams, $http, $window, $location, $filter, dataService) {
