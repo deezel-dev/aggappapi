@@ -647,9 +647,6 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                 
                 angular.forEach(market_list, function (market, index) {
 
-                        //var market ={};                        
-                        //market.id = entry.id;
-                        //market.marketname = entry.marketname;
                         farmers_market.addMarketItem(market);
                         
                         
@@ -670,6 +667,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                 market.id = _market.id;
                 market.marketName = _market.marketName;
                 market.marketdetails = marketdetails;
+                alert(market.marketdetails.Address);
                 
                 farmers_market.markets.push(market);
                 
