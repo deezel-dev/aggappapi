@@ -20,9 +20,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="row">
+                
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">                    
                     <div style="padding-left:20px;">
                         <div id="market_details">
