@@ -651,7 +651,6 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                         market.id = entry.id;
                         market.marketname = entry.marketname;
                         market.marketdetails = farmers_market.getMarketInfo(entry.id);
-                        alert(market.marketdetails.Address);
                         farmers_market.markets.push(market);
                         
                     });
@@ -678,9 +677,11 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         
         farmers_market.getMarketInfo = function (market_id) {
             var promise = $http.get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=' + market_id).then(function (response) {
+                var marketdetails = response.data.marketdetails;
+                alert(marketdetails.Address);
                 //farmers_market.marketdetails = response.data.marketdetails;
                 //farmers_market.broadcastMarketDetails();
-                return response.data.marketdetails;
+                return marketdetails;
             });
             return promise;
         }
