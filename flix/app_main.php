@@ -15,8 +15,7 @@
             </div>
             
            <div class="row" align="center">
-             <div class="visible-lg visible-md"><div class="col-lg-2 col-md-2">&nbsp;</div></div>
-             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8" data-ng-show="markets.length>0" ng-repeat="market in markets">                    
+             <div class="col-xs-12" data-ng-show="markets.length>0" ng-repeat="market in markets">                    
                         <div style="padding-left:20px;margin-top:10px;" align="left">
                             <div id="market_details">
                                 <b><h3>{{market.marketname}} - {{market.id}}</h3></b>
@@ -30,7 +29,6 @@
                         <hr size="3" width="100%" style="border-color: #8fcb67; background:#8fcb67">
                     </div>
                 
-             <div class="visible-lg visible-md"><div class="col-lg-2 col-md-2">&nbsp;</div></div>
            </div>
             
             <!-- 
