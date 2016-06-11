@@ -33,7 +33,7 @@
                                 <br>
                             </div>
                         </div>
-                        <hr size="3" width="100%" style="border-color: #8fcb67; background:#8fcb67">
+                        <hr size="3" width="100%" style="border-color:#8fcb67; background:#8fcb67">
                     </div>
                 
            </div>
