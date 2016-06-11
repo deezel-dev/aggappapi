@@ -13,8 +13,8 @@
                </div>
             </div>
             
-            <div class="row">
-                <div class="col-lg-5 col-md-5 col-sm-9 col-xs-9" style="display:block;">
+            <div class="row" align="left">
+                <div class="col-lg-5 col-md-5 col-sm-9 col-xs-9">
                     <input type="text" PLACEHOLDER='Enter Zip Code' ng-model="zip_code"/>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
