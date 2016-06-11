@@ -19,7 +19,6 @@
 <link href="/public/landing_page/css/styles.css" rel="stylesheet" type="text/css" />
 <link href="/public/landing_page/css/media-queries.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="/public/landing_page/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
-<link rel="shortcut icon" href="/public/landing_page/favicon.ico" type="image/x-icon">
 
 
 <!--[if lt IE 9]>
