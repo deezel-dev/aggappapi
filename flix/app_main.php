@@ -16,7 +16,8 @@
             <div class="row" align="left">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <input type="text" PLACEHOLDER='Enter Zip Code' ng-model="zip_code"/> &nbsp;&nbsp;
-                    <button ng-click="btnSearchZip(zip_code)" class="btn btn-success btn-xs">Search</button>
+                    <input type="text" PLACEHOLDER='Product' ng-model="product"/> &nbsp;&nbsp;
+                    <button ng-click="btnSearchZip(zip_code, product)" class="btn btn-success btn-xs">Search</button>
                </div>
                 
            </div>

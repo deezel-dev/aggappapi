@@ -658,6 +658,25 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             return promise;
         }
         
+        farmers_market.getMarkets = function (zip, product) {
+            var promise = $http.get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + zip).then(function (response) {
+                
+                farmers_market.markets = [];
+                var market_list = response.data.results;
+                
+                angular.forEach(market_list, function (market, index) {
+
+                        farmers_market.addMarketItem(market, product);
+                        
+                        
+                    });
+                
+                farmers_market.broadcastMarkets();
+                return farmers_market.markets;
+            });
+            return promise;
+        }
+        
         farmers_market.addMarketItem = function (_market) {
             var promise = $http.get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=' + _market.id).then(function (response) {
                 
@@ -669,6 +688,27 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                 market.marketdetails = marketdetails;
                 
                 farmers_market.markets.push(market);
+                
+                return marketdetails;
+            });
+            return promise;
+        }
+        
+        farmers_market.addMarketItem = function (_market, product) {
+            var promise = $http.get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=' + _market.id).then(function (response) {
+                
+                var marketdetails = response.data.marketdetails;
+                
+                var market = {};
+                market.id = _market.id;
+                market.marketname = (_market.marketname).substr((_market.marketname).indexOf(' ')+1); 
+                market.marketdetails = marketdetails;
+                
+                if(market.marketdetails.Products.indexOf(filter)>0){
+                    farmers_market.markets.push(market);
+                }
+                
+                
                 
                 return marketdetails;
             });
@@ -714,8 +754,15 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         $scope.market = {};
         $scope.marketdetails = {};
         
-        $scope.btnSearchZip = function (zip_code){
-            farmers_market.getMarkets(zip_code);
+        $scope.btnSearchZip = function (zip_code, product){
+            
+            if(product!=null && product.length>0){
+                farmers_market.getMarkets(zip_code, product);
+            } else {
+                farmers_market.getMarkets(zip_code);
+            }
+            
+            
         }
         
         $scope.search_market = function (market){
