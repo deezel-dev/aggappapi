@@ -639,7 +639,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         farmers_market.markets = [];
         farmers_market.marketdetails = {};
         
-        farmers_market.getMarkets = function (zip) {
+        farmers_market.getMarkets_Zip = function (zip) {
             var promise = $http.get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + zip).then(function (response) {
                 
                 farmers_market.markets = [];
@@ -658,7 +658,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             return promise;
         }
         
-        farmers_market.getMarkets = function (zip, product) {
+        farmers_market.getMarkets_ZipProduct = function (zip, product) {
             var promise = $http.get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + zip).then(function (response) {
                 
                 farmers_market.markets = [];
@@ -758,10 +758,10 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             
             if(product!=null && product.length>0){
                 alert('product');
-                farmers_market.getMarkets(zip_code, product);
+                farmers_market.getMarkets_ZipProduct(zip_code, product);
             } else {
                 alert('NO product');
-                farmers_market.getMarkets(zip_code);
+                farmers_market.getMarkets_Zip(zip_code);
             }
             
             
