@@ -11,10 +11,10 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <u><b><h3>Farmers Market Directory</h3></b></u>
                </div>
-                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                <div class="col-lg-3 col-md-4 col-sm-9 col-xs-9">
                     <input type="text" PLACEHOLDER='Enter Zip Code' ng-model="zip_code"/>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
                     <button style="margin-left:3px;margin-bottom:5px;" ng-click="btnSearchZip(zip_code)" class="btn btn-success btn-xs">Search</button>
                 </div>
            </div>
