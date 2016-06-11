@@ -19,10 +19,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         .state('farmers_market', {
             url: '/farmers_market',
             templateUrl: '/flix/app_farmers_market.php',
-            controller: 'mainCtrl',
-            params: {
-                mode: 1
-            }
+            controller: 'mainCtrl'
         })
         
         
