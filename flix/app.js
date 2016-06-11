@@ -9,7 +9,6 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         .state('flix_main', {
             url: '/home',
             templateUrl: '/flix/app_main.php',
-            controller: 'mainCtrl',
             params: {
                 mode: 1
             }
