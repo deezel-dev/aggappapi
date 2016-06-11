@@ -14,6 +14,19 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                 mode: 1
             }
         })
+        
+        
+        // MAIN VIEW - LANDING PAGE
+        .state('farmers_market', {
+            url: '/farmers_market',
+            templateUrl: '/flix/app_farmers_market.php',
+            controller: 'mainCtrl',
+            params: {
+                mode: 1
+            }
+        })
+        
+        
 
         // MOVIE LIST - GRID VIEW
         .state('flix_main_gridview', {
