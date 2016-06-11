@@ -8,7 +8,7 @@
         <div id="home" class="container">
             
             <div style="display:inline;">
-                <u><b><h3>Farmers Market Directory API</h3></b></u>
+                <u><b><h3>Farmers Market Directory</h3></b></u>
                         <input type="text" PLACEHOLDER='Enter Zip Code' ng-model="zip_code"/>
                         <button ng-click="btnSearchZip(zip_code)" class="btn btn-primary btn-xs">Search</button>
                         <br><br>
@@ -16,7 +16,7 @@
             
            <div class="row" align="center">
              <div class="col-xs-12" data-ng-show="markets.length>0" ng-repeat="market in markets">                    
-                        <div style="padding-left:20px;margin-top:10px;" align="left">
+                        <div align="left">
                             <div id="market_details">
                                 <b><h3>{{market.marketname}} - {{market.id}}</h3></b>
                                 <u><b>Address:</b></u>&nbsp;&nbsp;{{market.marketdetails.Address}}
