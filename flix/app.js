@@ -667,7 +667,6 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                 market.id = _market.id;
                 market.marketname = (_market.marketname).substr((_market.marketname).indexOf(' ')+1); 
                 market.marketdetails = marketdetails;
-                //alert(market.marketdetails.Address);
                 
                 farmers_market.markets.push(market);
                 
