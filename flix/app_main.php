@@ -25,7 +25,7 @@
              <div class="col-xs-12" data-ng-show="markets.length>0" ng-repeat="market in markets">                    
                         <div align="left">
                             <div id="market_details">
-                                <h3><b>{{market.marketname}}</b></h3>
+                                <font color="#8fcb67"><h3><b>{{market.marketname}}</b></h3></font>
                                 <u><b>Address:</b></u>&nbsp;&nbsp;{{market.marketdetails.Address}}
                                 <br><br><u><b>GoogleLink:</b></u>&nbsp;&nbsp;<a href="{{market.marketdetails.GoogleLink}}" target="_blank">GOOGLE</a>
                                 <br><br><u><b>Products:</b></u>&nbsp;&nbsp;{{market.marketdetails.Products}}
