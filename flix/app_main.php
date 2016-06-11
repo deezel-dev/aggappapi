@@ -10,7 +10,7 @@
             <div style="display:inline;">
                 <u><b><h3>Farmers Market Directory</h3></b></u>
                         <input type="text" PLACEHOLDER='Enter Zip Code' ng-model="zip_code"/>
-                        <button ng-click="btnSearchZip(zip_code)" class="btn btn-success btn-xs" btn-block>Search</button>
+                        <button ng-click="btnSearchZip(zip_code)" class="btn btn-success btn-xs btn-block">Search</button>
                         <br><br>
             </div>
             
