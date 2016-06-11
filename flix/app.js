@@ -757,8 +757,10 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         $scope.btnSearchZip = function (zip_code, product){
             
             if(product!=null && product.length>0){
+                alert('product');
                 farmers_market.getMarkets(zip_code, product);
             } else {
+                alert('NO product');
                 farmers_market.getMarkets(zip_code);
             }
             
