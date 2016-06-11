@@ -666,7 +666,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                 
                 angular.forEach(market_list, function (market, index) {
 
-                        farmers_market.addMarketItem(market, product);
+                        farmers_market.addMarketItem_productFilter(market, product);
                         
                         
                     });
@@ -694,7 +694,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             return promise;
         }
         
-        farmers_market.addMarketItem = function (_market, product) {
+        farmers_market.addMarketItem_productFilter = function (_market, product) {
             var promise = $http.get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=' + _market.id).then(function (response) {
                 
                 var marketdetails = response.data.marketdetails;
