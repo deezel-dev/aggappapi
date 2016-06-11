@@ -7,10 +7,16 @@
         <!-- home -->
         <div id="home" class="container">
             
-            <div style="display:inline;">
-                <u><b><h3>Farmers Market Directory</h3></b></u>
-                        <input class="col-xs-8" type="text" PLACEHOLDER='Enter Zip Code' ng-model="zip_code"/>
-                        <button style="margin-left:3px;margin-bottom:5px;" ng-click="btnSearchZip(zip_code)" class="col-xs-3 btn btn-success btn-xs">Search</button>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <u><b><h3>Farmers Market Directory</h3></b></u>
+               </div>
+                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                    <input type="text" PLACEHOLDER='Enter Zip Code' ng-model="zip_code"/>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <button style="margin-left:3px;margin-bottom:5px;" ng-click="btnSearchZip(zip_code)" class="btn btn-success btn-xs">Search</button>
+                </div>
                         <br><br>
             </div>
             
