@@ -8,19 +8,19 @@
         <div id="home" class="container">
             
             <div style="display:inline;">
-                <u><b><h3>Farmers Market Directory API</h3></b></u>
-                        <input type="text" PLACEHOLDER='Enter Zip Code' ng-model="zip_code"/>
-                        <button ng-click="btnSearchZip(zip_code)" class="btn btn-primary btn-xs">Search</button>
+                <u><b><h3>Farmers Market Directory</h3></b></u>
+                        <input class="col-xs-8" type="text" PLACEHOLDER='Enter Zip Code' ng-model="zip_code"/>
+                        <button style="margin-left:3px;margin-bottom:5px;" ng-click="btnSearchZip(zip_code)" class="col-xs-3 btn btn-success btn-xs">Search</button>
                         <br><br>
             </div>
             
            <div class="row" align="center">
              <div class="col-xs-12" data-ng-show="markets.length>0" ng-repeat="market in markets">                    
-                        <div style="padding-left:20px;margin-top:10px;" align="left">
+                        <div align="left">
                             <div id="market_details">
-                                <b><h3>{{market.marketname}} - {{market.id}}</h3></b>
+                                <h3><b>{{market.marketname}}</b></h3>
                                 <u><b>Address:</b></u>&nbsp;&nbsp;{{market.marketdetails.Address}}
-                                <br><br><u><b>GoogleLink:</b></u>&nbsp;&nbsp;<a href="{{marketdetails.GoogleLink}}" target="_blank">GOOGLE</a>
+                                <br><br><u><b>GoogleLink:</b></u>&nbsp;&nbsp;<a href="{{market.marketdetails.GoogleLink}}" target="_blank">GOOGLE</a>
                                 <br><br><u><b>Products:</b></u>&nbsp;&nbsp;{{market.marketdetails.Products}}
                                 <br><br><u><b>Schedule:</b></u>&nbsp;&nbsp;{{market.marketdetails.Schedule}}
                                 <br>
