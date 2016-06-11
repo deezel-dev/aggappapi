@@ -10,7 +10,9 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="margin-top:20px;">
                     <!-- <h2>Farmers Market</h2> -->
-                    <img src="/public/images/farmers_market.jpg" alt="Farmers Market" style="width:100%;height:100%;">
+                    <a ui-sref="farmers_market;" style="color: #fff;">
+                        <img src="/public/images/farmers_market.jpg" alt="Farmers Market" style="width:100%;height:100%;">
+                    </a>
                </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="margin-top:20px;">
                     <!-- <h2>Farmers Market</h2> -->
