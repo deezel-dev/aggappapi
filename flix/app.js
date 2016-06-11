@@ -704,7 +704,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                 market.marketname = (_market.marketname).substr((_market.marketname).indexOf(' ')+1); 
                 market.marketdetails = marketdetails;
                 
-                if(market.marketdetails.Products.indexOf(product)>0){
+                if(market.marketdetails.Products.toLowerCase().indexOf(product.toLowerCase())>0){
                     farmers_market.markets.push(market);
                 }
                 
