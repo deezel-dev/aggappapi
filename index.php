@@ -8,7 +8,7 @@
    <head>
       <?php require ("/include/layout/main.head.php") ?>
    </head>
-    <body data-ng-controller="indexCtrl">        
+    <body data-ng-controller="indexCtrl" style="background-color:#333333">        
         
         <!-- content ui-view -->
         <div style ="margin-top: 40px;" ui-view></div> <!--  autoscroll="true"  -->
