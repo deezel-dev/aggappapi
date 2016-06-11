@@ -20,7 +20,7 @@
                             <div id="market_details">
                                 <b><h3>{{market.marketname}} - {{market.id}}</h3></b>
                                 <u><b>Address:</b></u>&nbsp;&nbsp;{{market.marketdetails.Address}}
-                                <br><br><u><b>GoogleLink:</b></u>&nbsp;&nbsp;<a href="{{marketdetails.GoogleLink}}" target="_blank">{{market.marketdetails.GoogleLink}}</a>
+                                <br><br><u><b>GoogleLink:</b></u>&nbsp;&nbsp;<a href="{{marketdetails.GoogleLink}}" target="_blank">GOOGLE</a>
                                 <br><br><u><b>Products:</b></u>&nbsp;&nbsp;{{market.marketdetails.Products}}
                                 <br><br><u><b>Schedule:</b></u>&nbsp;&nbsp;{{market.marketdetails.Schedule}}
                                 <br>
