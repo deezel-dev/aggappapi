@@ -19,7 +19,16 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         .state('farmers_market', {
             url: '/farmers_market',
             templateUrl: '/flix/app_farmers_market.php',
-            controller: 'mainCtrl'
+            controller: 'farmMarketCtrl'
+        })
+        
+        
+        
+        // MAIN VIEW - LANDING PAGE
+        .state('weather_info', {
+            url: '/weather_info',
+            templateUrl: '/flix/app_weather_info.php',
+            controller: 'weatherInfoCtrl'
         })
         
         
@@ -642,7 +651,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         }
 
     } ])
-    .service('farmers_market', ['$http', '$rootScope', '$window', '$q', '$state', function ($http, $rootScope, $window, $q, $state) {
+    .service('farmers_market', ['$http', '$rootScope', function ($http, $rootScope) {
 
         var farmers_market = this;
         farmers_market.markets = [];
@@ -753,11 +762,38 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             $rootScope.$broadcast('market_item_update');
         };
 
+    } ])    
+    .service('weather_service', ['$http', '$rootScope', function ($http, $rootScope) {
+
+        var weather_service = this;
+        weather_service.apikey = "&appid=e544bd588402f732d243ba04b8cde5ba";
+        weather_service.base_url="http://api.openweathermap.org/data/2.5/";
+        weather_service.forecast = "forecast?";
+        weather_service.history = "history?";
+        weather_service.weather_info = {};
+        
+        //http://api.openweathermap.org/data/2.5/forecast?zip=14580,us&appid=e544bd588402f732d243ba04b8cde5ba
+              
+        weather_service.getForecast= function (zip) {
+            var url = weather_service.base_url + weather_service.forecast + "zip=" + zip + ",us" + weather_service.apikey;
+            var promise = $http.get(url).then(function (response) {                
+                weather_service.weather_info = response.data; 
+                weather_service.broadcastForecast();
+                return weather_service.response;
+            });
+            return promise;
+        }
+        
+        
+        weather_service.broadcastForecast = function () {
+            $rootScope.$broadcast('weather_forecast_update');
+        };
+
     } ])
     .controller("indexCtrl", ['$scope', '$window', '$location', function ($scope, $window, $location) {
 
-    } ])
-    .controller("mainCtrl", ['$scope', '$rootScope', '$state', '$stateParams', '$http', '$window', 'farmers_market', function ($scope, $rootScope, $state, $stateParams, $http, $window, farmers_market) {
+    } ])    
+    .controller("farmMarketCtrl", ['$scope', '$rootScope', '$state', '$stateParams', '$http', '$window', 'farmers_market', function ($scope, $rootScope, $state, $stateParams, $http, $window, farmers_market) {
         
         $scope.markets = [];
         $scope.market = {};
@@ -791,6 +827,20 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             for (var i in obj) if (obj.hasOwnProperty(i)) return false;
             return true;
         };
+        
+    } ])
+    .controller("weatherInfoCtrl", ['$scope', '$rootScope', '$state', '$stateParams', '$http', '$window', 'weather_service', function ($scope, $rootScope, $state, $stateParams, $http, $window, weather_service) {
+        
+        $scope.weather_info = {};
+        
+        $scope.btnSearchZip = function (zip_code){
+            weather_service.getForecast(zip_code);            
+        }
+        
+        $scope.$on('weather_forecast_update', function () {
+            $scope.weather_info = weather_service.weather_info;
+        });
+        
         
     } ])
     .controller("gridCtrl", ['$scope', '$state', '$stateParams', '$http', '$window', '$location', '$filter', 'dataService', function ($scope, $state, $stateParams, $http, $window, $location, $filter, dataService) {

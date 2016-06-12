@@ -16,7 +16,9 @@
                </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="margin-top:20px;">
                     <!-- <h2>Farmers Market</h2> -->
-                    <img src="/public/images/weather.jpg" alt="Weather" style="width:100%;height:100%;">
+                    <a ui-sref="weather_info()" style="color: #fff;">
+                        <img src="/public/images/weather.jpg" alt="weather" style="width:100%;height:100%;">
+                    </a>
                </div>
             </div>
             
