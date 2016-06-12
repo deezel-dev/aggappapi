@@ -775,7 +775,9 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         //http://api.openweathermap.org/data/2.5/forecast?zip=14580,us&appid=e544bd588402f732d243ba04b8cde5ba
               
         weather_service.getForecast= function (zip) {
-            var url = weather_service.base_url + weather_service.forecast + "zip=" + zip + ",us" + weather_service.apikey;
+            var url = weather_service.base_url + weather_service.forecast + 
+            "zip=" + zip + ",us&units=imperial" + weather_service.apikey;
+            
             var promise = $http.get(url).then(function (response) {                
                 weather_service.weather_info = response.data; 
                 weather_service.broadcastForecast();
