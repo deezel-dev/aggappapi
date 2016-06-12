@@ -32,27 +32,41 @@
                             <div class="col-xs-12" data-ng-show="1" ng-repeat="day in weather_info.list">                    
                                 <div align="left" id="market_details">
                                         
-                                        <div>Time of data forecasted:&nbsp;<&nbsp;{{day.dt}}</div>
-                                        <div>Day temperature&nbsp;&nbsp;{{day.temp.day}}</div>
-                                        <div>Min&nbsp;&nbsp;{{day.temp.min}}</div>
-                                        <div>Max&nbsp;&nbsp;{{day.temp.max}}</div>
+                                        <div>Time:&nbsp;&nbsp;{{day.dt}}</div>
+                                        <div>Date:&nbsp;&nbsp;{{day.dt_txt}}</div>
+                                        <div>Temp:&nbsp;&nbsp;{{day.main.temp}}</div>
+                                        <div>Min:&nbsp;&nbsp;{{day.main.temp_min}}</div>
+                                        <div>Max:&nbsp;&nbsp;{{day.main.temp_max}}</div>
                                         
-                                        <div>Night&nbsp;&nbsp;{{day.temp.night}}</div>
-                                        <div>Evening&nbsp;&nbsp;{{day.temp.eve}}</div>
-                                        <div>Morning&nbsp;&nbsp;{{day.temp.morn}}</div>
                                         
-                                        <div>Atmospheric pressure&nbsp;&nbsp;{{day.pressure}}</div>
-                                        <div>Humidity&nbsp;&nbsp;{{day.humidity}}</div>
-                                        <div>Weather&nbsp;&nbsp;{{day.weather}}</div>
+                                        <div>Pressure:&nbsp;&nbsp;{{day.main.pressure}}</div>
+                                        <div>Sea Level&nbsp;&nbsp;{{day.main.sea_level}}</div>
+                                        <div>Ground Level&nbsp;&nbsp;{{day.main.grnd_level}}</div>
+                                        <div>Humidity&nbsp;&nbsp;{{day.main.humidity}}</div>
+                                        <div>temp_kf&nbsp;&nbsp;{{day.main.temp_kf}}</div>
                                         
-                                        <div>WeatherID&nbsp;&nbsp;{{day.weather.id}}</div>
-                                        <div>Group&nbsp;&nbsp;{{day.weather.main}}</div>
-                                        <div>Weather condition&nbsp;&nbsp;{{day.weather.description}}</div>
+                                        <!-- 
+                                            <div>Night&nbsp;&nbsp;{{day.temp.night}}</div>
+                                            <div>Evening&nbsp;&nbsp;{{day.temp.eve}}</div>
+                                            <div>Morning&nbsp;&nbsp;{{day.temp.morn}}</div>
+                                        -->
                                         
+                                                                                
+                                        "rain":{},
+                                        
+                                        <div>&nbsp;&nbsp;Weather</div>                                    
+                                        <div>{{day.weather.main}}</div>
+                                        <div>{{day.weather.description}}</div>                                        
                                         <div>icon&nbsp;&nbsp;{{day.weather.icon}}</div>
-                                        <div>speed&nbsp;&nbsp;{{day.speed}}</div>
-                                        <div>deg&nbsp;&nbsp;{{day.deg}}</div>
-                                        <div>clouds&nbsp;&nbsp;{{day.clouds}}</div>
+                                        
+                                        
+                                        <div>&nbsp;&nbsp;Wind</div>                                    
+                                        <div>Speed:&nbsp;&nbsp;{{day.wind.speed}}</div>                                    
+                                        <div>deg:&nbsp;&nbsp;{{day.wind.deg}}</div>
+                                        
+                                        
+                                        <div>&nbsp;&nbsp;Rain</div>                                    
+                                        <div>Speed:&nbsp;&nbsp;{{day.rain}}</div>
             
                                 </div>
                             </div>
