@@ -9,61 +9,57 @@
             
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <u><b><h3>Farmers Market Directory</h3></b></u>
+                    <u><b><h3>Weather INfo</h3></b></u>
                </div>
             </div>
             
             <div class="row" align="left">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <input type="text" PLACEHOLDER='Enter Zip Code' ng-model="zip_code"/> &nbsp;&nbsp;
-                    <input type="text" PLACEHOLDER='Product' ng-model="product"/> &nbsp;&nbsp;
-                    <button ng-click="btnSearchZip(zip_code, product)" class="btn btn-success btn-xs">Search</button>
-               </div>
-                
+                    <button ng-click="btnSearchZip(zip_code)" class="btn btn-success btn-xs">Search</button>
+               </div>                
            </div>
             
-           <div class="row" align="center">
-             <div class="col-xs-12" data-ng-show="markets.length>0" ng-repeat="market in markets">                    
-                        <div align="left">
-                            <div id="market_details">
-                                <font color="#336600"><h3><b>{{market.marketname}}</b></h3></font>
-                                <u><b>Address:</b></u>&nbsp;&nbsp;{{market.marketdetails.Address}}
-                                <br><br><u><b>GoogleLink:</b></u>&nbsp;&nbsp;<a href="{{market.marketdetails.GoogleLink}}" target="_blank">GOOGLE</a>
-                                <br><br><u><b>Products:</b></u>&nbsp;&nbsp;{{market.marketdetails.Products}}
-                                <br><br><u><b>Schedule:</b></u>&nbsp;&nbsp;{{market.marketdetails.Schedule}}
-                                <br>
+            <div class="row" align="center">
+                <div class="col-xs-12" data-ng-show="weather_info!=null" align="left" id="weather_info">
+                                    
+                        <div>City ID:&nbsp;<&nbsp;{{weather_info.city.id}}</div>
+                        <div>City name&nbsp;&nbsp;{{weather_info.city.name}}</div>
+                        <div>City latitude&nbsp;&nbsp;{{weather_info.city.coord.lat}}</div>
+                        <div>City longitude&nbsp;&nbsp;{{weather_info.city.coord.lon}}</div>
+
+                        <div class="row" align="center"> <!-- start row -->
+                            <div class="col-xs-12" data-ng-show="weather_info.list>0" ng-repeat="day in weather_info.list">                    
+                                <div align="left" id="market_details">
+                                        
+                                        <div>Time of data forecasted:&nbsp;<&nbsp;{{day.dt}}</div>
+                                        <div>Day temperature&nbsp;&nbsp;{{day.temp.day}}</div>
+                                        <div>Min&nbsp;&nbsp;{{day.temp.min}}</div>
+                                        <div>Max&nbsp;&nbsp;{{day.temp.max}}</div>
+                                        
+                                        <div>Night&nbsp;&nbsp;{{day.temp.night}}</div>
+                                        <div>Evening&nbsp;&nbsp;{{day.temp.eve}}</div>
+                                        <div>Morning&nbsp;&nbsp;{{day.temp.morn}}</div>
+                                        
+                                        <div>Atmospheric pressure&nbsp;&nbsp;{{day.pressure}}</div>
+                                        <div>Humidity&nbsp;&nbsp;{{day.humidity}}</div>
+                                        <div>Weather&nbsp;&nbsp;{{day.weather}}</div>
+                                        
+                                        <div>WeatherID&nbsp;&nbsp;{{day.weather.id}}</div>
+                                        <div>Group&nbsp;&nbsp;{{day.weather.main}}</div>
+                                        <div>Weather condition&nbsp;&nbsp;{{day.weather.description}}</div>
+                                        
+                                        <div>icon&nbsp;&nbsp;{{day.weather.icon}}</div>
+                                        <div>speed&nbsp;&nbsp;{{day.speed}}</div>
+                                        <div>deg&nbsp;&nbsp;{{day.deg}}</div>
+                                        <div>clouds&nbsp;&nbsp;{{day.clouds}}</div>
+            
+                                </div>
                             </div>
-                        </div>
-                        <hr size="3" width="100%" style="border-color:#8fcb67; background:#8fcb67">
+                            <hr size="3" width="100%" style="border-color:#8fcb67; background:#8fcb67">
+                        </div> <!-- end row -->
                     </div>
-                
-           </div>
-            
-            <!-- 
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">                    
-                    <div style="padding-left:20px;">
-                        <div id="market_list" ng-repeat="farm_market in markets">
-                            <font color="#000">
-                                <a data-ng-click="search_market(farm_market)">{{farm_market.id}}</a>: &nbsp;&nbsp; {{farm_market.marketname}} </font> 
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" data-ng-show="market.id>0">                    
-                    <div style="padding-left:20px;margin-top:10px;">
-                        <div id="market_details">
-                            <b><h3>{{market.marketname}}</h3></b>
-                            <u><b>Address:</b></u>&nbsp;&nbsp;{{marketdetails.Address}}
-                            <br><br><u><b>GoogleLink:</b></u>&nbsp;&nbsp;<a href="{{marketdetails.GoogleLink}}" target="_blank">{{marketdetails.GoogleLink}}</a>
-                            <br><br><u><b>Products:</b></u>&nbsp;&nbsp;{{marketdetails.Products}}
-                            <br><br><u><b>Schedule:</b></u>&nbsp;&nbsp;{{marketdetails.Schedule}}
-                            <br>
-                        </div>
-                    </div>
-                </div>
             </div>
-            -->
         </div>
    </body>
 </html>
