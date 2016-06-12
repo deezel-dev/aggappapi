@@ -42,14 +42,14 @@
                                         
                                         <br><br>
                                         <div>&nbsp;&nbsp;<b><u>Temperature</u></b></div> 
-                                        <div>&nbsp;&nbsp;Temp:&nbsp;&nbsp;{{day.main.temp}}</div>
-                                        <div>&nbsp;&nbsp;Min:&nbsp;&nbsp;{{day.main.temp_min}}</div>
-                                        <div>&nbsp;&nbsp;Max:&nbsp;&nbsp;{{day.main.temp_max}}</div>
-                                        <div>&nbsp;&nbsp;Pressure:&nbsp;&nbsp;{{day.main.pressure}}</div>
-                                        <div>&nbsp;&nbsp;Sea Level:&nbsp;&nbsp;{{day.main.sea_level}}</div>
-                                        <div>&nbsp;&nbsp;Ground Level:&nbsp;&nbsp;{{day.main.grnd_level}}</div>
-                                        <div>&nbsp;&nbsp;Humidity:&nbsp;&nbsp;{{day.main.humidity}}</div>
-                                        <div>&nbsp;&nbsp;temp_kf:&nbsp;&nbsp;{{day.main.temp_kf}}</div>
+                                        <div>&nbsp;&nbsp;&nbsp;&nbsp;Temp:&nbsp;&nbsp;{{day.main.temp}}</div>
+                                        <div>&nbsp;&nbsp;&nbsp;&nbsp;Min:&nbsp;&nbsp;{{day.main.temp_min}}</div>
+                                        <div>&nbsp;&nbsp;&nbsp;&nbsp;Max:&nbsp;&nbsp;{{day.main.temp_max}}</div>
+                                        <div>&nbsp;&nbsp;&nbsp;&nbsp;Pressure:&nbsp;&nbsp;{{day.main.pressure}}</div>
+                                        <div>&nbsp;&nbsp;&nbsp;&nbsp;Sea Level:&nbsp;&nbsp;{{day.main.sea_level}}</div>
+                                        <div>&nbsp;&nbsp;&nbsp;&nbsp;Ground Level:&nbsp;&nbsp;{{day.main.grnd_level}}</div>
+                                        <div>&nbsp;&nbsp;&nbsp;&nbsp;Humidity:&nbsp;&nbsp;{{day.main.humidity}}</div>
+                                        <div>&nbsp;&nbsp;&nbsp;&nbsp;temp_kf:&nbsp;&nbsp;{{day.main.temp_kf}}</div>
                                         
                                         <!-- 
                                             <div>Night&nbsp;&nbsp;{{day.temp.night}}</div>
@@ -65,7 +65,7 @@
                                         <br><br>
                                         <div>&nbsp;&nbsp;<b><u>Wind</u></b></div>                                   
                                         <div>&nbsp;&nbsp;&nbsp;&nbsp;Speed:&nbsp;&nbsp;{{day.wind.speed}}</div>                                    
-                                        <div>&nbsp;&nbsp;&nbsp;&nbsp;deg:&nbsp;&nbsp;{{day.wind.deg}}</div>
+                                        <div>&nbsp;&nbsp;&nbsp;&nbsp;Deg:&nbsp;&nbsp;{{day.wind.deg}}</div>
                                         
                                         
                                         <br><br>
