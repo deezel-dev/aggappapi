@@ -23,13 +23,13 @@
             <div class="row" align="center">
                 <div class="col-xs-12" data-ng-show="weather_info!=null" align="left" id="weather_info">
                                     
-                        <div>City ID:&nbsp;<&nbsp;{{weather_info.city.id}}</div>
-                        <div>City name&nbsp;&nbsp;{{weather_info.city.name}}</div>
-                        <div>City latitude&nbsp;&nbsp;{{weather_info.city.coord.lat}}</div>
-                        <div>City longitude&nbsp;&nbsp;{{weather_info.city.coord.lon}}</div>
+                        <div><b><u>City ID:</u></b>&nbsp;&nbsp;{{weather_info.city.id}}</div>
+                        <div><b><u>City name:</u></b>&nbsp;&nbsp;{{weather_info.city.name}}</div>
+                        <div><b><u>City latitude:</u></b>&nbsp;&nbsp;{{weather_info.city.coord.lat}}</div>
+                        <div><b><u>City longitude:</u></b>&nbsp;&nbsp;{{weather_info.city.coord.lon}}</div>
 
                         <div class="row" align="center"> <!-- start row -->
-                            <div class="col-xs-12" data-ng-show="weather_info.list>0" ng-repeat="day in weather_info.list">                    
+                            <div class="col-xs-12" data-ng-show="1" ng-repeat="day in weather_info.list">                    
                                 <div align="left" id="market_details">
                                         
                                         <div>Time of data forecasted:&nbsp;<&nbsp;{{day.dt}}</div>
