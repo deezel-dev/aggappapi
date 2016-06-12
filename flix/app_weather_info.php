@@ -20,6 +20,8 @@
                </div>                
            </div>
             
+            
+            
             <div class="row" align="center">
                 <div class="col-xs-12" data-ng-show="weather_info!=null" align="left" id="weather_info">
                                     
@@ -27,50 +29,52 @@
                         <div><b><u>City name:</u></b>&nbsp;&nbsp;{{weather_info.city.name}}</div>
                         <div><b><u>City latitude:</u></b>&nbsp;&nbsp;{{weather_info.city.coord.lat}}</div>
                         <div><b><u>City longitude:</u></b>&nbsp;&nbsp;{{weather_info.city.coord.lon}}</div>
+                        
+                        <hr size="3" width="100%" style="border-color:#8fcb67; background:#8fcb67">
 
                         <div class="row" align="center"> <!-- start row -->
                             <div class="col-xs-12" data-ng-show="1" ng-repeat="day in weather_info.list">                    
                                 <div align="left" id="market_details">
                                         
-                                        <div>Time:&nbsp;&nbsp;{{day.dt}}</div>
-                                        <div>Date:&nbsp;&nbsp;{{day.dt_txt}}</div>
-                                        <div>Temp:&nbsp;&nbsp;{{day.main.temp}}</div>
-                                        <div>Min:&nbsp;&nbsp;{{day.main.temp_min}}</div>
-                                        <div>Max:&nbsp;&nbsp;{{day.main.temp_max}}</div>
+                                        <div>&nbsp;&nbsp;Time:&nbsp;&nbsp;{{day.dt}}</div>
+                                        <div>&nbsp;&nbsp;Date:&nbsp;&nbsp;{{day.dt_txt}}</div>
+                                        <div>&nbsp;&nbsp;Temp:&nbsp;&nbsp;{{day.main.temp}}</div>
+                                        <div>&nbsp;&nbsp;Min:&nbsp;&nbsp;{{day.main.temp_min}}</div>
+                                        <div>&nbsp;&nbsp;Max:&nbsp;&nbsp;{{day.main.temp_max}}</div>
                                         
                                         
-                                        <div>Pressure:&nbsp;&nbsp;{{day.main.pressure}}</div>
-                                        <div>Sea Level&nbsp;&nbsp;{{day.main.sea_level}}</div>
-                                        <div>Ground Level&nbsp;&nbsp;{{day.main.grnd_level}}</div>
-                                        <div>Humidity&nbsp;&nbsp;{{day.main.humidity}}</div>
-                                        <div>temp_kf&nbsp;&nbsp;{{day.main.temp_kf}}</div>
+                                        <div>&nbsp;&nbsp;Pressure:&nbsp;&nbsp;{{day.main.pressure}}</div>
+                                        <div>&nbsp;&nbsp;Sea Level&nbsp;&nbsp;{{day.main.sea_level}}</div>
+                                        <div>&nbsp;&nbsp;Ground Level&nbsp;&nbsp;{{day.main.grnd_level}}</div>
+                                        <div>&nbsp;&nbsp;Humidity&nbsp;&nbsp;{{day.main.humidity}}</div>
+                                        <div>&nbsp;&nbsp;temp_kf&nbsp;&nbsp;{{day.main.temp_kf}}</div>
                                         
                                         <!-- 
                                             <div>Night&nbsp;&nbsp;{{day.temp.night}}</div>
                                             <div>Evening&nbsp;&nbsp;{{day.temp.eve}}</div>
                                             <div>Morning&nbsp;&nbsp;{{day.temp.morn}}</div>
                                         -->
-                                        
-                                                                                
-                                        "rain":{},
-                                        
-                                        <div>&nbsp;&nbsp;Weather</div>                                    
-                                        <div>{{day.weather.main}}</div>
-                                        <div>{{day.weather.description}}</div>                                        
-                                        <div>icon&nbsp;&nbsp;{{day.weather.icon}}</div>
+                                        <br><br>
+                                        <div>&nbsp;&nbsp;<b><u>Weather</u></b></div>                                    
+                                        <div>&nbsp;&nbsp;&nbsp;&nbsp;{{day.weather.main}}</div>
+                                        <div>&nbsp;&nbsp;&nbsp;&nbsp;{{day.weather.description}}</div>                                          
                                         
                                         
-                                        <div>&nbsp;&nbsp;Wind</div>                                    
-                                        <div>Speed:&nbsp;&nbsp;{{day.wind.speed}}</div>                                    
-                                        <div>deg:&nbsp;&nbsp;{{day.wind.deg}}</div>
+                                        <br><br>
+                                        <div>&nbsp;&nbsp;<b><u>Wind</u></b></div>                                   
+                                        <div>&nbsp;&nbsp;&nbsp;&nbsp;Speed:&nbsp;&nbsp;{{day.wind.speed}}</div>                                    
+                                        <div>&nbsp;&nbsp;&nbsp;&nbsp;deg:&nbsp;&nbsp;{{day.wind.deg}}</div>
                                         
                                         
-                                        <div>&nbsp;&nbsp;Rain</div>                                    
-                                        <div>Speed:&nbsp;&nbsp;{{day.rain}}</div>
+                                        <br><br>
+                                        <div>&nbsp;&nbsp;<b><u>Rain</u></b></div>                             
+                                        <div>&nbsp;&nbsp;&nbsp;&nbsp;Speed:&nbsp;&nbsp;{{day.rain}}</div>
+                                        <br>
+                                        
+                                        <hr size="3" width="100%" style="border-color:#8fcb67; background:#8fcb67">
             
                                 </div>
                             </div>
-                            <hr size="3" width="100%" style="border-color:#8fcb67; background:#8fcb67">
                         </div> <!-- end row -->
                     </div>
             </div>
