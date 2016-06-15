@@ -25,6 +25,10 @@
 
       <div id="navbar" class="navbar-collapse collapse">
          <ul class="nav navbar-nav navbar-left">
+                  
+            <li><a ui-sref="farmers_market()" style="color: #fff;">Farmers Markets</a></li>
+            <li><a ui-sref="weather_info()" style="color: #fff;">Weather</a></li>
+            
          </ul>
       </div>
    </div>
