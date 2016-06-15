@@ -18,7 +18,7 @@
 
           <!-- nav search_bar -->
           <div style="display: inline-block">
-               <div style="margin-top:15px;"><font style="color: #8fcb67;" size="+2">DEEZEL DATA</font></div>
+               <div style="margin-top:15px;"><font style="color: #8fcb67;" size="+2">AGG DATA</font></div>
           </div>
 
       </div>
